@@ -8,20 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		003D232F1F5EEF140042DF2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D232E1F5EEF140042DF2F /* AppDelegate.swift */; };
-		003D23311F5EEF140042DF2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D23301F5EEF140042DF2F /* ViewController.swift */; };
+		003D23311F5EEF140042DF2F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D23301F5EEF140042DF2F /* SearchViewController.swift */; };
 		003D23341F5EEF140042DF2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003D23321F5EEF140042DF2F /* Main.storyboard */; };
 		003D23361F5EEF140042DF2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 003D23351F5EEF140042DF2F /* Assets.xcassets */; };
 		003D23391F5EEF140042DF2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003D23371F5EEF140042DF2F /* LaunchScreen.storyboard */; };
+		00AE82011F617D380032FB78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00AE82001F617D380032FB78 /* GoogleService-Info.plist */; };
+		00AE82081F63670D0032FB78 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE82071F63670D0032FB78 /* Restaurant.swift */; };
+		00AE820A1F66BF5D0032FB78 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE82091F66BF5D0032FB78 /* Station.swift */; };
+		00AE820C1F66CC140032FB78 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE820B1F66CC140032FB78 /* ResultViewController.swift */; };
+		00AE820E1F69754D0032FB78 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE820D1F69754D0032FB78 /* RestaurantTableViewCell.swift */; };
+		00AE82101F6AB69E0032FB78 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE820F1F6AB69E0032FB78 /* RestaurantViewController.swift */; };
+		61DF87F250EAB3F14871F665 /* Pods_beerhunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C164FDE9422869FE79DE73 /* Pods_beerhunt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		003D232B1F5EEF140042DF2F /* beerhunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = beerhunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		003D232E1F5EEF140042DF2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		003D23301F5EEF140042DF2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		003D23301F5EEF140042DF2F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		003D23331F5EEF140042DF2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		003D23351F5EEF140042DF2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		003D23381F5EEF140042DF2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		003D233A1F5EEF140042DF2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00AE82001F617D380032FB78 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		00AE82051F6185BE0032FB78 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		00AE82071F63670D0032FB78 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		00AE82091F66BF5D0032FB78 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		00AE820B1F66CC140032FB78 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		00AE820D1F69754D0032FB78 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		00AE820F1F6AB69E0032FB78 /* RestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
+		3A9FFB62FF909A141292213E /* Pods-beerhunt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beerhunt.release.xcconfig"; path = "Pods/Target Support Files/Pods-beerhunt/Pods-beerhunt.release.xcconfig"; sourceTree = "<group>"; };
+		9899DFB71798E05A9FA0703F /* Pods-beerhunt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beerhunt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beerhunt/Pods-beerhunt.debug.xcconfig"; sourceTree = "<group>"; };
+		A7C164FDE9422869FE79DE73 /* Pods_beerhunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beerhunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61DF87F250EAB3F14871F665 /* Pods_beerhunt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +58,8 @@
 			children = (
 				003D232D1F5EEF140042DF2F /* beerhunt */,
 				003D232C1F5EEF140042DF2F /* Products */,
+				B645DCF97C78BDF5987ADDAB /* Pods */,
+				5C91D53D00C91BC28BED03E1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +75,37 @@
 			isa = PBXGroup;
 			children = (
 				003D232E1F5EEF140042DF2F /* AppDelegate.swift */,
-				003D23301F5EEF140042DF2F /* ViewController.swift */,
+				003D23301F5EEF140042DF2F /* SearchViewController.swift */,
+				00AE820D1F69754D0032FB78 /* RestaurantTableViewCell.swift */,
+				00AE820B1F66CC140032FB78 /* ResultViewController.swift */,
+				00AE820F1F6AB69E0032FB78 /* RestaurantViewController.swift */,
+				00AE82071F63670D0032FB78 /* Restaurant.swift */,
+				00AE82091F66BF5D0032FB78 /* Station.swift */,
 				003D23321F5EEF140042DF2F /* Main.storyboard */,
 				003D23351F5EEF140042DF2F /* Assets.xcassets */,
 				003D23371F5EEF140042DF2F /* LaunchScreen.storyboard */,
 				003D233A1F5EEF140042DF2F /* Info.plist */,
+				00AE82001F617D380032FB78 /* GoogleService-Info.plist */,
 			);
 			path = beerhunt;
+			sourceTree = "<group>";
+		};
+		5C91D53D00C91BC28BED03E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00AE82051F6185BE0032FB78 /* CoreLocation.framework */,
+				A7C164FDE9422869FE79DE73 /* Pods_beerhunt.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B645DCF97C78BDF5987ADDAB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9899DFB71798E05A9FA0703F /* Pods-beerhunt.debug.xcconfig */,
+				3A9FFB62FF909A141292213E /* Pods-beerhunt.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +115,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 003D233D1F5EEF140042DF2F /* Build configuration list for PBXNativeTarget "beerhunt" */;
 			buildPhases = (
+				9D902DE0F5CAA8C3E2419124 /* [CP] Check Pods Manifest.lock */,
 				003D23271F5EEF140042DF2F /* Sources */,
 				003D23281F5EEF140042DF2F /* Frameworks */,
 				003D23291F5EEF140042DF2F /* Resources */,
+				84A278C0349CF4D0B3E67F0F /* [CP] Embed Pods Frameworks */,
+				EDE532D9AE0DA2BE1640C54B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				003D23391F5EEF140042DF2F /* LaunchScreen.storyboard in Resources */,
+				00AE82011F617D380032FB78 /* GoogleService-Info.plist in Resources */,
 				003D23361F5EEF140042DF2F /* Assets.xcassets in Resources */,
 				003D23341F5EEF140042DF2F /* Main.storyboard in Resources */,
 			);
@@ -132,12 +180,84 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		84A278C0349CF4D0B3E67F0F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-beerhunt/Pods-beerhunt-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/Mixpanel/Mixpanel.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mixpanel.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beerhunt/Pods-beerhunt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D902DE0F5CAA8C3E2419124 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-beerhunt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDE532D9AE0DA2BE1640C54B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-beerhunt/Pods-beerhunt-resources.sh",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beerhunt/Pods-beerhunt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		003D23271F5EEF140042DF2F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				003D23311F5EEF140042DF2F /* ViewController.swift in Sources */,
+				00AE820C1F66CC140032FB78 /* ResultViewController.swift in Sources */,
+				003D23311F5EEF140042DF2F /* SearchViewController.swift in Sources */,
+				00AE82101F6AB69E0032FB78 /* RestaurantViewController.swift in Sources */,
+				00AE82081F63670D0032FB78 /* Restaurant.swift in Sources */,
+				00AE820A1F66BF5D0032FB78 /* Station.swift in Sources */,
+				00AE820E1F69754D0032FB78 /* RestaurantTableViewCell.swift in Sources */,
 				003D232F1F5EEF140042DF2F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +379,7 @@
 		};
 		003D233E1F5EEF140042DF2F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9899DFB71798E05A9FA0703F /* Pods-beerhunt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6DK3BC5XAV;
@@ -272,6 +393,7 @@
 		};
 		003D233F1F5EEF140042DF2F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A9FFB62FF909A141292213E /* Pods-beerhunt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6DK3BC5XAV;
@@ -302,6 +424,7 @@
 				003D233F1F5EEF140042DF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
