@@ -18,6 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        UINavigationBar.appearance().barTintColor = UIColor.init(red: 246/255.0, green: 166/255.0, blue: 35/255.0, alpha: 1.0)
+//        UINavigationBar.appearance().tintColor = UIColor.init(red: 44/255.0, green: 28/255.0, blue: 2/255.0, alpha: 1.0)
+        UINavigationBar.appearance().tintColor = UIColor.black
+        UINavigationBar.appearance().isTranslucent = false
+        UITabBar.appearance().tintColor = UIColor.init(red: 246/255.0, green: 166/255.0, blue: 35/255.0, alpha: 1.0)
         FirebaseApp.configure()
         GMSPlacesClient.provideAPIKey("AIzaSyAhJbjf10FDTyBYhJc5Q0jC75a3Oi5PwiY")
         URLCache.shared = URLCache(memoryCapacity: 0, diskCapacity: 0, diskPath: nil)

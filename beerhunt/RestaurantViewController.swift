@@ -39,6 +39,9 @@ class RestaurantViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.estimatedRowHeight = 44
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         placesClient = GMSPlacesClient.shared()
         self.lookupPlaceByID(placeID: restaurant!.placeId)
         
@@ -47,16 +50,18 @@ class RestaurantViewController: UIViewController {
         slideShow.addGestureRecognizer(gestureRecognizer)
         var inputs = [ImageSource]()
         for (index, data) in metadata.enumerated() {
-            self.loadImageForMetadata(photoMetadata: data, completion: { image in
+            self.loadImageForMetadata(photoMetadata: data, completion: { [weak self] image in
+                guard let strongSelf = self else { return }
                 if image != nil {
                     inputs.append(ImageSource(image: image!))
                 }
-                if index == self.restaurant.metadata!.count - 1 {
-                    self.slideShow.setImageInputs(inputs)
+                if index == strongSelf.restaurant.metadata!.count - 1 {
+                    strongSelf.slideShow.setImageInputs(inputs)
                 }
             })
         }
-        slideShow.pageControlPosition = .insideScrollView
+        slideShow.pageControlPosition = .underScrollView
+        tableView.tableFooterView = UIView()
     }
     
     func picDidTap(_ sender: UITapGestureRecognizer) {
@@ -65,7 +70,8 @@ class RestaurantViewController: UIViewController {
     
     func lookupPlaceByID(placeID: String) {
         print(placeID)
-        placesClient.lookUpPlaceID(placeID, callback: { (place, error) -> Void in
+        placesClient.lookUpPlaceID(placeID, callback: { [weak self] (place, error) -> Void in
+            guard let strongSelf = self else { return }
             if let error = error {
                 print("lookup place id query error: \(error.localizedDescription)")
                 return
@@ -76,15 +82,15 @@ class RestaurantViewController: UIViewController {
                 return
             }
             
-            print("Place name \(place.name)")
-            print("Place address \(String(describing: place.formattedAddress))")
-            print("Place placeID \(place.placeID)")
-            print("Place attributions \(String(describing: place.attributions))")
-            self.restaurant.address = place.formattedAddress
-            self.restaurant.attributions = place.attributions?.string
-            self.restaurant.phoneNumber = place.phoneNumber
-            self.restaurant.website = place.website?.absoluteString
-            self.tableView.reloadData()
+//            print("Place name \(place.name)")
+//            print("Place address \(String(describing: place.formattedAddress))")
+//            print("Place placeID \(place.placeID)")
+//            print("Place attributions \(String(describing: place.attributions))")
+            strongSelf.restaurant.address = place.formattedAddress
+            strongSelf.restaurant.attributions = place.attributions?.string
+            strongSelf.restaurant.phoneNumber = place.phoneNumber
+            strongSelf.restaurant.website = place.website?.absoluteString
+            strongSelf.tableView.reloadData()
         })
     }
 
@@ -97,18 +103,22 @@ extension RestaurantViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "info", for: indexPath) as! InfoTableViewCell
         if indexPath.section == RVSections.info.rawValue {
             switch indexPath.row {
             case RVRows.name.rawValue:
-                cell.textLabel?.text = restaurant.name
+                cell.label.text = restaurant.name
                 cell.isUserInteractionEnabled = false
+                cell.infoImageView.image = UIImage(named: "Restaurant")
             case RVRows.phone.rawValue:
-                cell.textLabel?.text = restaurant.phoneNumber
+                cell.label?.text = restaurant.phoneNumber
+                cell.infoImageView.image = UIImage(named: "Phone")
             case RVRows.address.rawValue:
-                cell.textLabel?.text = restaurant.address
+                cell.label?.text = restaurant.address
+                cell.infoImageView.image = UIImage(named: "Pin")
             case RVRows.website.rawValue:
-                cell.textLabel?.text = restaurant.website
+                cell.label?.text = restaurant.website
+                cell.infoImageView.image = UIImage(named: "Web")
             default:
                 break
             }
@@ -136,21 +146,6 @@ extension RestaurantViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == RVSections.info.rawValue {
-            if indexPath.row == RVRows.address.rawValue {
-                return (restaurant.address != nil ) ? 100 : 0
-            }
-            if indexPath.row == RVRows.phone.rawValue {
-                return (restaurant.phoneNumber != nil ) ? 44 : 0
-            }
-            if indexPath.row == RVRows.website.rawValue {
-                return (restaurant.website != nil ) ? 44 : 0
-            }
-        }
-        return 44
-    }
-    
     func makeCall(number: String) {
         if let url:NSURL = NSURL(string: "tel://\(number)") {
             if application.canOpenURL(url as URL) {
@@ -174,18 +169,18 @@ extension RestaurantViewController: UITableViewDelegate, UITableViewDataSource {
     func userPickMapApp(encodedAddress: String){
         if alertController == nil {
             alertController = UIAlertController(title: "お店までの道のりを表示", message: "地図アプリをお選びください", preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel) { _ in
+            let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel) { [unowned self] _ in
                 self.alertController!.dismiss(animated: true, completion: nil)
             }
-            if application.canOpenURL(NSURL(string:"comgooglemaps://")! as URL) {
-                let googleAction = UIAlertAction(title: "Google Mapsで開く", style: .default) { _ in
+            if application.canOpenURL(URL(string:"https://www.google.com/maps/")!) {
+                let googleAction = UIAlertAction(title: "Google Mapsで開く", style: .default) { [unowned self] _ in
                     let url = NSURL(string: "comgooglemaps://?daddr=\(encodedAddress)")
                     self.application.open(url! as URL, options: [:], completionHandler: nil)
                     self.alertController!.dismiss(animated: true, completion: nil)
                 }
                 alertController!.addAction(googleAction)
             }
-            let appleAction = UIAlertAction(title: "マップで開く", style: .default) { _ in
+            let appleAction = UIAlertAction(title: "マップで開く", style: .default) { [unowned self] _ in
                 let url = NSURL(string: "http://maps.apple.com/?daddr=\(encodedAddress)")
                 self.application.open(url! as URL, options: [:], completionHandler: nil)
                 self.alertController!.dismiss(animated: true, completion: nil)

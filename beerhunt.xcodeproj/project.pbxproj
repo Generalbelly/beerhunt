@@ -18,6 +18,8 @@
 		00AE820C1F66CC140032FB78 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE820B1F66CC140032FB78 /* ResultViewController.swift */; };
 		00AE820E1F69754D0032FB78 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE820D1F69754D0032FB78 /* RestaurantTableViewCell.swift */; };
 		00AE82101F6AB69E0032FB78 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE820F1F6AB69E0032FB78 /* RestaurantViewController.swift */; };
+		00C736791F6F6A42009C0635 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C736781F6F6A42009C0635 /* InfoTableViewCell.swift */; };
+		00C7367B1F6F999B009C0635 /* RequestFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C7367A1F6F999B009C0635 /* RequestFormViewController.swift */; };
 		61DF87F250EAB3F14871F665 /* Pods_beerhunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C164FDE9422869FE79DE73 /* Pods_beerhunt.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,8 @@
 		00AE820B1F66CC140032FB78 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		00AE820D1F69754D0032FB78 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		00AE820F1F6AB69E0032FB78 /* RestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
+		00C736781F6F6A42009C0635 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
+		00C7367A1F6F999B009C0635 /* RequestFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestFormViewController.swift; sourceTree = "<group>"; };
 		3A9FFB62FF909A141292213E /* Pods-beerhunt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beerhunt.release.xcconfig"; path = "Pods/Target Support Files/Pods-beerhunt/Pods-beerhunt.release.xcconfig"; sourceTree = "<group>"; };
 		9899DFB71798E05A9FA0703F /* Pods-beerhunt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beerhunt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beerhunt/Pods-beerhunt.debug.xcconfig"; sourceTree = "<group>"; };
 		A7C164FDE9422869FE79DE73 /* Pods_beerhunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beerhunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +83,8 @@
 				00AE820D1F69754D0032FB78 /* RestaurantTableViewCell.swift */,
 				00AE820B1F66CC140032FB78 /* ResultViewController.swift */,
 				00AE820F1F6AB69E0032FB78 /* RestaurantViewController.swift */,
+				00C7367A1F6F999B009C0635 /* RequestFormViewController.swift */,
+				00C736781F6F6A42009C0635 /* InfoTableViewCell.swift */,
 				00AE82071F63670D0032FB78 /* Restaurant.swift */,
 				00AE82091F66BF5D0032FB78 /* Station.swift */,
 				003D23321F5EEF140042DF2F /* Main.storyboard */,
@@ -253,6 +259,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				00AE820C1F66CC140032FB78 /* ResultViewController.swift in Sources */,
+				00C736791F6F6A42009C0635 /* InfoTableViewCell.swift in Sources */,
+				00C7367B1F6F999B009C0635 /* RequestFormViewController.swift in Sources */,
 				003D23311F5EEF140042DF2F /* SearchViewController.swift in Sources */,
 				00AE82101F6AB69E0032FB78 /* RestaurantViewController.swift in Sources */,
 				00AE82081F63670D0032FB78 /* Restaurant.swift in Sources */,

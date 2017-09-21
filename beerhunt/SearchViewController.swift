@@ -7,11 +7,14 @@
 //
 
 import UIKit
-import CoreLocation
 import FirebaseDatabase
+import CoreLocation
 
 class SearchViewController: UIViewController {
 
+    @IBAction func nearMeButton(_ sender: Any) {
+        requestLocation()
+    }
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
@@ -19,41 +22,49 @@ class SearchViewController: UIViewController {
         }
     }
     let searchController = UISearchController(searchResultsController: nil)
+    var alertController: UIAlertController! {
+        didSet {
+            let OKAction = UIAlertAction(title: "閉じる", style: .default, handler: { [unowned self] _ in
+                self.alertController.dismiss(animated: true, completion: nil)
+            })
+            self.alertController.addAction(OKAction)
+        }
+    }
     
-    var locationManager = CLLocationManager()
+    var locationManager: CLLocationManager?
     
     var ref: DatabaseReference!
     var stations = [Station]()
     var filteredStations = [Station]()
     var isFetching = false
+    var myPlace: CLLocation?
     
     var selectedStation: Station?
     var restaurants = [Restaurant]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let title = "位置情報が取得できません"
+        let message = "「設定 > プライバシー > 位置情報サービス」よりbeerhuntの位置情報の利用を許可して下さい"
+        alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
         
         ref = Database.database().reference()
-        ref.child("stations").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("stations").observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
+            guard let strongSelf = self else { return }
             if snapshot.value != nil {
-                self.stations = (snapshot.children.allObjects as! [DataSnapshot]).map{ (item) -> Station in
+                strongSelf.stations = (snapshot.children.allObjects as! [DataSnapshot]).map{ (item) -> Station in
                     var data = item.value as! [String: String]
                     data["key"] = item.key
                     return Station(data: data)
                 }
-                self.tableView.reloadData()
+                strongSelf.tableView.reloadData()
             }
         })
-//        requestLocation()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        locationManager.startUpdatingLocation()
     }
 
     func searchBarIsEmpty() -> Bool {
@@ -69,7 +80,11 @@ class SearchViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let rvc = segue.destination as! ResultViewController
-        rvc.station = self.selectedStation
+        if segue.identifier == "result" {
+            rvc.station = self.selectedStation
+        } else if segue.identifier == "nearme" {
+            rvc.myPlace = self.myPlace
+        }
     }
 }
 
@@ -109,7 +124,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        selectedStation = stations[indexPath.row]
+        if isFiltering() {
+            selectedStation = filteredStations[indexPath.row]
+        } else {
+            selectedStation = stations[indexPath.row]
+        }
         performSegue(withIdentifier: "result", sender: self)
     }
     
@@ -118,72 +137,46 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 extension SearchViewController: CLLocationManagerDelegate {
     
     func requestLocation() {
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        if locationManager == nil {
+            locationManager = CLLocationManager()
+        }
+        locationManager!.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager!.delegate = self
+        locationManager!.requestWhenInUseAuthorization()
+        locationManager!.startUpdatingLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .notDetermined:
-            print("ユーザーはこのアプリケーションに関してまだ選択を行っていません")
-            // 許可を求めるコードを記述する（後述）
-            break
-        case .denied:
-            print("ローケーションサービスの設定が「無効」になっています (ユーザーによって、明示的に拒否されています）")
-            // 「設定 > プライバシー > 位置情報サービス で、位置情報サービスの利用を許可して下さい」を表示する
-            break
-        case .restricted:
-            print("このアプリケーションは位置情報サービスを使用できません(ユーザによって拒否されたわけではありません)")
-            // 「このアプリは、位置情報を取得できないために、正常に動作できません」を表示する
+            locationManager!.requestWhenInUseAuthorization()
             break
         case .authorizedWhenInUse:
-            print("起動時のみ、位置情報の取得が許可されています。")
-            locationManager.startUpdatingLocation()
+            locationManager!.startUpdatingLocation()
+            break
+        case .denied:
+            if self.alertController.isBeingPresented {
+                self.alertController.dismiss(animated: true, completion: nil)
+            }
+            self.present(alertController, animated: true)
+            break
+        case .restricted:
+            // restricted by e.g. parental controls. User can't enable Location Services
             break
         default:
             break
         }
     }
-    
-    func fetchNearbyPlaces(minLat: Double, maxLat: Double, minLon: Double, maxLon: Double) {
-        ref.child("restaurants").queryOrdered(byChild: "lat").queryStarting(atValue: minLat).queryEnding(atValue: maxLat).observeSingleEvent(of: .value, with: { (snapshot) in
-            if snapshot.value != nil {
-                for item in snapshot.children.allObjects as! [DataSnapshot] {
-                    let data = item.value as! [String: Double]
-                    if data["lon"]! > minLon && data["lon"]! < maxLon {
-                        self.ref.child("restaurants").child(item.key).observeSingleEvent(of: .value, with: { (snapshot) in
-                            var data2 = snapshot.value as! [String: Any]
-                            data2["key"] = item.key
-                            let restaurant = Restaurant(data: data2)
-                            self.restaurants.append(restaurant)
-                        })
-                    }
-                }
-            }
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-    }
-    
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         for location in locations {
-            // One degree of latitude and of longtitude is approximately 111 kilometers
             if !isFetching {
-                let center = location.coordinate
-                let latitudeDelta = Double(2.0 / 111.0 * 0.5)
-                let longitudeDelta = Double(2.0 / 111.0 * 0.5)
-                
-                fetchNearbyPlaces(minLat: center.latitude - latitudeDelta, maxLat: center.latitude + latitudeDelta, minLon: center.longitude - longitudeDelta, maxLon: center.longitude + longitudeDelta)
+                myPlace = location
                 isFetching = true
+                performSegue(withIdentifier: "nearme", sender: self)
             }
         }
         manager.stopUpdatingLocation()
-    }
-    
-    func locationManager(_ manager: CLLocationManager,didFailWithError error: Error){
-        print("come")
     }
     
 }
