@@ -13,6 +13,5 @@ target 'beerhunt' do
     pod 'Eureka'
     pod 'GooglePlaces', '~> 2.4'
     pod 'DZNEmptyDataSet'
-    pod 'Mixpanel'
     pod 'ImageSlideshow', '~> 1.3'
 end
