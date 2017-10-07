@@ -102,17 +102,25 @@ extension ResultViewController: UITableViewDelegate, UITableViewDataSource {
         let restaurant = restaurants[indexPath.row]
         cell.mainLabel!.text = restaurant.name
         cell.subLabel!.text = (self.station != nil) ? restaurant.travelTime : "徒歩\(restaurant.distance! / 80)分"
-        
-        placesClient.lookUpPhotos(forPlaceID: restaurant.placeId) { (photos, error) -> Void in
-            if let error = error {
-                // TODO: handle the error.
-                print("Error: \(error.localizedDescription)")
-            } else {
-                restaurant.metadata = photos!.results
-                if let firstPhoto = photos?.results.first {
-                    self.loadImageForMetadata(photoMetadata: firstPhoto) { photo in
-                        cell.coverView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
-                        cell.backgroundImageView.image = photo
+        DispatchQueue.global(qos: .userInteractive).async { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.placesClient.lookUpPhotos(forPlaceID: restaurant.placeId) { (photos, error) -> Void in
+                if let error = error {
+                    // TODO: handle the error.
+                    print("Error: \(error.localizedDescription)")
+                } else {
+                    restaurant.metadata = photos!.results
+                    if let firstPhoto = photos?.results.first {
+                        DispatchQueue.main.async {
+                            cell.activityIndicator.startAnimating()
+                            cell.activityIndicator.show()
+                            cell.backgroundImageView.image = nil
+                            strongSelf.loadImageForMetadata(photoMetadata: firstPhoto) { photo in
+                                cell.activityIndicator.stopAnimating()
+                                cell.activityIndicator.hide()
+                                cell.backgroundImageView.image = photo
+                            }
+                        }
                     }
                 }
             }
@@ -138,8 +146,8 @@ extension ResultViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         let string = "周辺にレストランはありません"
         let attributes = [
-            NSFontAttributeName: UIFont.systemFont(ofSize: 18),
-            NSForegroundColorAttributeName: UIColor.darkGray,
+            NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18),
+            NSAttributedStringKey.foregroundColor: UIColor.darkGray,
             ]
         return NSAttributedString(string: string, attributes: attributes)
     }

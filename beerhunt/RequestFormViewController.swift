@@ -17,10 +17,12 @@ class RequestFormViewController: FormViewController {
             let OKAction = UIAlertAction(title: "Done", style: .default) { [unowned self] _ in
                 self.dismiss(animated: true, completion: nil)
                 if let row = self.form.rowBy(tag: "message") as? TextAreaRow {
-                    row.value = ""
+                    row.value = "未選択"
+                    row.updateCell()
                 }
                 if let row = self.form.rowBy(tag: "email") as? EmailRow {
                     row.value = ""
+                    row.updateCell()
                 }
                 if let row = self.form.rowBy(tag: "feature") as? AlertRow<String> {
                     row.value = ""
@@ -77,3 +79,4 @@ class RequestFormViewController: FormViewController {
     }
     
 }
+

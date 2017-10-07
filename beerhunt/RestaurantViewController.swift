@@ -64,7 +64,7 @@ class RestaurantViewController: UIViewController {
         tableView.tableFooterView = UIView()
     }
     
-    func picDidTap(_ sender: UITapGestureRecognizer) {
+    @objc func picDidTap(_ sender: UITapGestureRecognizer) {
         slideShow.presentFullScreenController(from: self)
     }
     

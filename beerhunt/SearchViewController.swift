@@ -44,10 +44,11 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         let title = "位置情報が取得できません"
-        let message = "「設定 > プライバシー > 位置情報サービス」よりbeerhuntの位置情報の利用を許可して下さい"
+        let message = "「設定 > プrライバシー > 位置情報サービス」よりbeerhuntの位置情報の利用を許可して下さい"
         alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
+
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true

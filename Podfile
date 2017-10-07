@@ -8,10 +8,8 @@ target 'beerhunt' do
   # Pods for beerhunt
     pod 'Firebase/Core'
     pod 'FirebaseDatabase'
-    pod 'FirebaseStorage'
-    pod 'FirebaseAuth'
-    pod 'Eureka'
     pod 'GooglePlaces', '~> 2.4'
     pod 'DZNEmptyDataSet'
-    pod 'ImageSlideshow', '~> 1.3'
+    pod 'ImageSlideshow', '~> 1.4'
+    pod 'Eureka', '~> 4.0.1'
 end
