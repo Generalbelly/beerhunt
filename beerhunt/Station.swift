@@ -9,11 +9,11 @@
 import Foundation
 
 struct Station {
-    var key = ""
-    var name: String
-    var city: String
-    var furigana: String
-    var line: String
+    var key: String = ""
+    var name: String = ""
+    var city: String = ""
+    var furigana: String = ""
+    var line: String = ""
     
     init(data: [String: String]) {
         self.key = data["key"]!

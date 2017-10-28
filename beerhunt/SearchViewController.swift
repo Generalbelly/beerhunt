@@ -12,6 +12,8 @@ import CoreLocation
 
 class SearchViewController: UIViewController {
 
+    let defaults = UserDefaults.standard
+    
     @IBAction func nearMeButton(_ sender: Any) {
         requestLocation()
     }
@@ -45,6 +47,12 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let favorite = defaults.object(forKey: Constants.User.favorites.rawValue) as? [String]
+        if favorite == nil {
+            print("Set empty array")
+            defaults.set([], forKey: Constants.User.favorites.rawValue)
+        }
+        
         let title = "位置情報が取得できません"
         let message = "「設定 > プrライバシー > 位置情報サービス」よりbeerhuntの位置情報の利用を許可して下さい"
         alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

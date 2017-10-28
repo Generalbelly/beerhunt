@@ -21,33 +21,47 @@ enum RVRows: Int {
     case website = 3
 }
 
-class RestaurantViewController: UIViewController {
+protocol RestaurantViewDelegate: class {
+    func didTapFavButton(key: String, isFavorite: Bool) -> ()
+}
 
+class RestaurantViewController: UIViewController {
+    
+    let application = UIApplication.shared
+    let defaults = UserDefaults.standard
+    var alertController: UIAlertController?
+    var placesClient: GMSPlacesClient!
+    
+    var restaurant: Restaurant!
+    var favorites: [String] = []
+    
+    weak var delegate: RestaurantViewDelegate?
+    
     @IBOutlet weak var slideShow: ImageSlideshow!
     @IBOutlet weak var tableView: UITableView! {
         didSet {
-            tableView.dataSource = self
-            tableView.delegate = self
+            self.tableView.dataSource = self
+            self.tableView.delegate = self
         }
     }
-    var alertController: UIAlertController?
     
-    var placesClient: GMSPlacesClient!
+    @IBOutlet weak var favoriteButton: RoundedButton!
+    @IBAction func favoriteButtonTapped(_ sender: Any) {
+        self.changeFavButtonColor(isFavorite: !self.restaurant.isFavorite)
+        self.delegate?.didTapFavButton(key: self.restaurant.key, isFavorite: self.restaurant.isFavorite)
+    }
 
-    var restaurant: Restaurant!
-    let application = UIApplication.shared
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.estimatedRowHeight = 44
-        tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 44
+        self.tableView.rowHeight = UITableViewAutomaticDimension
         
         placesClient = GMSPlacesClient.shared()
         self.lookupPlaceByID(placeID: restaurant!.placeId)
         
         guard let metadata = restaurant.metadata else { return }
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.picDidTap(_:)))
-        slideShow.addGestureRecognizer(gestureRecognizer)
+        self.slideShow.addGestureRecognizer(gestureRecognizer)
         var inputs = [ImageSource]()
         for (index, data) in metadata.enumerated() {
             self.loadImageForMetadata(photoMetadata: data, completion: { [weak self] image in
@@ -60,16 +74,24 @@ class RestaurantViewController: UIViewController {
                 }
             })
         }
-        slideShow.pageControlPosition = .underScrollView
+        self.slideShow.pageControlPosition = .underScrollView
         tableView.tableFooterView = UIView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.favorites = self.defaults.object(forKey: Constants.User.favorites.rawValue) as! [String]
+        if self.favorites.contains(restaurant.key) {
+            self.restaurant.isFavorite = true
+        }
+        self.changeFavButtonColor(isFavorite: self.restaurant.isFavorite)
+    }
+    
     @objc func picDidTap(_ sender: UITapGestureRecognizer) {
-        slideShow.presentFullScreenController(from: self)
+        self.slideShow.presentFullScreenController(from: self)
     }
     
     func lookupPlaceByID(placeID: String) {
-        print(placeID)
         placesClient.lookUpPlaceID(placeID, callback: { [weak self] (place, error) -> Void in
             guard let strongSelf = self else { return }
             if let error = error {
@@ -88,10 +110,35 @@ class RestaurantViewController: UIViewController {
 //            print("Place attributions \(String(describing: place.attributions))")
             strongSelf.restaurant.address = place.formattedAddress
             strongSelf.restaurant.attributions = place.attributions?.string
-            strongSelf.restaurant.phoneNumber = place.phoneNumber
+            strongSelf.restaurant.phoneNumber = place.phoneNumber?.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "+81", with: "0")
             strongSelf.restaurant.website = place.website?.absoluteString
             strongSelf.tableView.reloadData()
         })
+    }
+    
+    func changeFavButtonColor(isFavorite: Bool) {
+        if isFavorite {
+            self.favoriteButton.backgroundColor = UIColor.init(red: 246/255.0, green: 166/255.0, blue: 35/255.0, alpha: 1.0)
+            if !self.favorites.contains(self.restaurant.key) {
+                self.addToFavorites()
+            }
+        } else {
+            self.favoriteButton.backgroundColor = UIColor.clear
+            if self.favorites.contains(self.restaurant.key) {
+                self.removeFromFavorites()
+            }
+        }
+        self.restaurant.isFavorite = isFavorite
+    }
+    
+    func addToFavorites() {
+        self.favorites = self.favorites + [self.restaurant.key]
+        defaults.set(self.favorites, forKey: Constants.User.favorites.rawValue)
+    }
+    
+    func removeFromFavorites() {
+        self.favorites = self.favorites.filter { $0 != self.restaurant.key }
+        defaults.set(self.favorites, forKey: Constants.User.favorites.rawValue)
     }
 
 }

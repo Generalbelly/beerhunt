@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		002A22741FA379EE00A41DA4 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002A22731FA379EE00A41DA4 /* RoundedButton.swift */; };
 		003D232F1F5EEF140042DF2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D232E1F5EEF140042DF2F /* AppDelegate.swift */; };
 		003D23311F5EEF140042DF2F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D23301F5EEF140042DF2F /* SearchViewController.swift */; };
 		003D23341F5EEF140042DF2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003D23321F5EEF140042DF2F /* Main.storyboard */; };
 		003D23361F5EEF140042DF2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 003D23351F5EEF140042DF2F /* Assets.xcassets */; };
 		003D23391F5EEF140042DF2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003D23371F5EEF140042DF2F /* LaunchScreen.storyboard */; };
+		0086323C1FA3F95A008C36AC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0086323B1FA3F95A008C36AC /* Constants.swift */; };
+		0086323E1FA40FB0008C36AC /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0086323D1FA40FB0008C36AC /* FavoritesViewController.swift */; };
 		00AE82011F617D380032FB78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00AE82001F617D380032FB78 /* GoogleService-Info.plist */; };
 		00AE82081F63670D0032FB78 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE82071F63670D0032FB78 /* Restaurant.swift */; };
 		00AE820A1F66BF5D0032FB78 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE82091F66BF5D0032FB78 /* Station.swift */; };
@@ -24,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		002A22731FA379EE00A41DA4 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		003D232B1F5EEF140042DF2F /* beerhunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = beerhunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		003D232E1F5EEF140042DF2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		003D23301F5EEF140042DF2F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +35,8 @@
 		003D23351F5EEF140042DF2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		003D23381F5EEF140042DF2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		003D233A1F5EEF140042DF2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0086323B1FA3F95A008C36AC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0086323D1FA40FB0008C36AC /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		00AE82001F617D380032FB78 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		00AE82051F6185BE0032FB78 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		00AE82071F63670D0032FB78 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
@@ -83,12 +89,15 @@
 				00AE820D1F69754D0032FB78 /* RestaurantTableViewCell.swift */,
 				00AE820B1F66CC140032FB78 /* ResultViewController.swift */,
 				00AE820F1F6AB69E0032FB78 /* RestaurantViewController.swift */,
+				0086323D1FA40FB0008C36AC /* FavoritesViewController.swift */,
 				00C7367A1F6F999B009C0635 /* RequestFormViewController.swift */,
+				002A22731FA379EE00A41DA4 /* RoundedButton.swift */,
 				00C736781F6F6A42009C0635 /* InfoTableViewCell.swift */,
 				00AE82071F63670D0032FB78 /* Restaurant.swift */,
 				00AE82091F66BF5D0032FB78 /* Station.swift */,
 				003D23321F5EEF140042DF2F /* Main.storyboard */,
 				003D23351F5EEF140042DF2F /* Assets.xcassets */,
+				0086323B1FA3F95A008C36AC /* Constants.swift */,
 				003D23371F5EEF140042DF2F /* LaunchScreen.storyboard */,
 				003D233A1F5EEF140042DF2F /* Info.plist */,
 				00AE82001F617D380032FB78 /* GoogleService-Info.plist */,
@@ -264,10 +273,13 @@
 				00C7367B1F6F999B009C0635 /* RequestFormViewController.swift in Sources */,
 				003D23311F5EEF140042DF2F /* SearchViewController.swift in Sources */,
 				00AE82101F6AB69E0032FB78 /* RestaurantViewController.swift in Sources */,
+				002A22741FA379EE00A41DA4 /* RoundedButton.swift in Sources */,
 				00AE82081F63670D0032FB78 /* Restaurant.swift in Sources */,
 				00AE820A1F66BF5D0032FB78 /* Station.swift in Sources */,
 				00AE820E1F69754D0032FB78 /* RestaurantTableViewCell.swift in Sources */,
 				003D232F1F5EEF140042DF2F /* AppDelegate.swift in Sources */,
+				0086323E1FA40FB0008C36AC /* FavoritesViewController.swift in Sources */,
+				0086323C1FA3F95A008C36AC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

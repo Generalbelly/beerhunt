@@ -10,23 +10,20 @@ import Foundation
 import GooglePlaces
 
 class Restaurant {
-    var key = ""
-    var name: String
-    var lat: Double
-    var lon: Double
-    var placeId: String
-    var distance: Int?
-    var travelTime: String?
-    var address: String?
-    var attributions: String?
-    var phoneNumber: String? {
-        didSet {
-            self.phoneNumber = self.phoneNumber?.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "+81", with: "0")
-        }
-    }
-    var website: String?
-    var openNowStatus: String?
-    var metadata: [GMSPlacePhotoMetadata]?
+    var key: String = ""
+    var name: String = ""
+    var lat: Double = 0
+    var lon: Double = 0
+    var placeId: String = ""
+    var distance: Int? = nil
+    var travelTime: String? = nil
+    var address: String? = nil
+    var attributions: String? = nil
+    var phoneNumber: String? = nil
+    var website: String? = nil
+    var openNowStatus: String? = nil
+    var metadata: [GMSPlacePhotoMetadata]? = nil
+    var isFavorite = false
     
     init(data: [String: Any]) {
         self.key = data["key"] as! String
