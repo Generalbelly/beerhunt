@@ -40,13 +40,19 @@ class FavoritesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.favorites = self.defaults.object(forKey: Constants.User.favorites.rawValue) as! [String]
-        if self.favorites.count > self.restaurants.count {
-            for favorite in self.favorites {
+        for (index, restaurant) in self.restaurants.enumerated() {
+            if !self.favorites.contains(restaurant.key) {
+                self.restaurants.remove(at: index)
+                self.tableView.deleteRows(at: [IndexPath(item: index, section: 0)], with: UITableViewRowAnimation.automatic)
+            }
+        }
+        for favorite in self.favorites {
+            if !self.restaurants.contains { $0.key == favorite } {
                 self.fetchFavoriteRestaurant(key: favorite)
             }
         }
     }
-    
+        
     func fetchFavoriteRestaurant(key: String) {
         self.ref.child("restaurants/\(key)").observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
             guard let strongSelf = self else { return }
