@@ -38,7 +38,6 @@ class SearchViewController: UIViewController {
     var ref: DatabaseReference!
     var stations = [Station]()
     var filteredStations = [Station]()
-    var isFetching = false
     var myPlace: CLLocation?
     
     var selectedStation: Station?
@@ -74,6 +73,10 @@ class SearchViewController: UIViewController {
                 strongSelf.tableView.reloadData()
             }
         })
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
 
     func searchBarIsEmpty() -> Bool {
@@ -179,11 +182,8 @@ extension SearchViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         for location in locations {
-            if !isFetching {
-                myPlace = location
-                isFetching = true
-                performSegue(withIdentifier: "nearme", sender: self)
-            }
+            myPlace = location
+            performSegue(withIdentifier: "nearme", sender: self)
         }
         manager.stopUpdatingLocation()
     }

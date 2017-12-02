@@ -41,8 +41,13 @@ class RequestFormViewController: FormViewController {
             <<< AlertRow<String>() {
                 $0.title = "追加して欲しい機能"
                 $0.selectorTitle = "一番欲しい機能を教えてください"
-                $0.options = ["飲んだビールの記録が取れる機能", "お店の情報・写真の投稿機能", "SNS機能"]
-                $0.value = "未選択"
+                $0.options = [
+                    "お店の情報・写真の投稿機能",
+                    "飲んだビールの記録が取れる機能",
+                    "SNS機能",
+                    "その他"
+                ]
+                $0.value = "お店の情報・写真の投稿機能"
                 $0.tag = "feature"
             }
             .onPresent{ _, to in
