@@ -22,8 +22,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = UIColor.black
         UINavigationBar.appearance().isTranslucent = false
         UITabBar.appearance().tintColor = UIColor.init(red: 246/255.0, green: 166/255.0, blue: 35/255.0, alpha: 1.0)
-        FirebaseApp.configure()
-        GMSPlacesClient.provideAPIKey("AIzaSyAhJbjf10FDTyBYhJc5Q0jC75a3Oi5PwiY")
+        FirebaseConfiguration.shared.setLoggerLevel(.error)
+        
+        #if STAGING || DEBUG
+            print("come")
+            let filePath = Bundle.main.path(forResource: "GoogleService-Info-staging", ofType: "plist")
+            guard let fileopts = FirebaseOptions(contentsOfFile: filePath!) else { assert(false, "Couldn't load config file") }
+            FirebaseApp.configure(options: fileopts)
+            GMSPlacesClient.provideAPIKey("AIzaSyBWtQz9k0F85rUSQqLeaUtOlKnPzM8zaFM")
+        #else
+            FirebaseApp.configure()
+            GMSPlacesClient.provideAPIKey("AIzaSyAhJbjf10FDTyBYhJc5Q0jC75a3Oi5PwiY")
+        #endif
         URLCache.shared = URLCache(memoryCapacity: 0, diskCapacity: 0, diskPath: nil)
         return true
     }
