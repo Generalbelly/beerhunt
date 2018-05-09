@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		001C347020A1E567004DC024 /* GoogleService-Info-staging.plist in Resources */ = {isa = PBXBuildFile; fileRef = 001C346F20A1E567004DC024 /* GoogleService-Info-staging.plist */; };
 		002A22741FA379EE00A41DA4 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002A22731FA379EE00A41DA4 /* RoundedButton.swift */; };
 		003D232F1F5EEF140042DF2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D232E1F5EEF140042DF2F /* AppDelegate.swift */; };
 		003D23311F5EEF140042DF2F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D23301F5EEF140042DF2F /* SearchViewController.swift */; };
@@ -24,12 +23,11 @@
 		00AE82101F6AB69E0032FB78 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE820F1F6AB69E0032FB78 /* RestaurantViewController.swift */; };
 		00C736791F6F6A42009C0635 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C736781F6F6A42009C0635 /* InfoTableViewCell.swift */; };
 		00C7367B1F6F999B009C0635 /* RequestFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C7367A1F6F999B009C0635 /* RequestFormViewController.swift */; };
+		00EF0D9C20A3B54E0052522E /* GoogleService-Info-staging.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00EF0D9B20A3B54E0052522E /* GoogleService-Info-staging.plist */; };
 		61DF87F250EAB3F14871F665 /* Pods_beerhunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C164FDE9422869FE79DE73 /* Pods_beerhunt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		001C346E20A1E325004DC024 /* beerhunt copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "beerhunt copy-Info.plist"; path = "/Users/shimmennobuyoshi/ios/beerhunt/beerhunt copy-Info.plist"; sourceTree = "<absolute>"; };
-		001C346F20A1E567004DC024 /* GoogleService-Info-staging.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-staging.plist"; sourceTree = "<group>"; };
 		002A22731FA379EE00A41DA4 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		003D232B1F5EEF140042DF2F /* beerhunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = beerhunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		003D232E1F5EEF140042DF2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +47,7 @@
 		00AE820F1F6AB69E0032FB78 /* RestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
 		00C736781F6F6A42009C0635 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		00C7367A1F6F999B009C0635 /* RequestFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestFormViewController.swift; sourceTree = "<group>"; };
+		00EF0D9B20A3B54E0052522E /* GoogleService-Info-staging.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-staging.plist"; sourceTree = "<group>"; };
 		3A9FFB62FF909A141292213E /* Pods-beerhunt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beerhunt.release.xcconfig"; path = "Pods/Target Support Files/Pods-beerhunt/Pods-beerhunt.release.xcconfig"; sourceTree = "<group>"; };
 		9899DFB71798E05A9FA0703F /* Pods-beerhunt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beerhunt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beerhunt/Pods-beerhunt.debug.xcconfig"; sourceTree = "<group>"; };
 		A7C164FDE9422869FE79DE73 /* Pods_beerhunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beerhunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,7 +73,6 @@
 				003D232C1F5EEF140042DF2F /* Products */,
 				B645DCF97C78BDF5987ADDAB /* Pods */,
 				5C91D53D00C91BC28BED03E1 /* Frameworks */,
-				001C346E20A1E325004DC024 /* beerhunt copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,7 +103,7 @@
 				0086323B1FA3F95A008C36AC /* Constants.swift */,
 				003D23371F5EEF140042DF2F /* LaunchScreen.storyboard */,
 				003D233A1F5EEF140042DF2F /* Info.plist */,
-				001C346F20A1E567004DC024 /* GoogleService-Info-staging.plist */,
+				00EF0D9B20A3B54E0052522E /* GoogleService-Info-staging.plist */,
 				00AE82001F617D380032FB78 /* GoogleService-Info.plist */,
 			);
 			path = beerhunt;
@@ -194,8 +192,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00EF0D9C20A3B54E0052522E /* GoogleService-Info-staging.plist in Resources */,
 				003D23391F5EEF140042DF2F /* LaunchScreen.storyboard in Resources */,
-				001C347020A1E567004DC024 /* GoogleService-Info-staging.plist in Resources */,
 				00AE82011F617D380032FB78 /* GoogleService-Info.plist in Resources */,
 				003D23361F5EEF140042DF2F /* Assets.xcassets in Resources */,
 				003D23341F5EEF140042DF2F /* Main.storyboard in Resources */,
@@ -317,6 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_ID_SUFFIX = .staging;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -348,6 +347,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FIREBASE_CONFIG_FILE = "GoogleService-Info-staging";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -362,6 +362,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GOOGLE_PLACE_SECRET_KEY = AIzaSyBWtQz9k0F85rUSQqLeaUtOlKnPzM8zaFM;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -380,7 +381,7 @@
 				DEVELOPMENT_TEAM = 6DK3BC5XAV;
 				INFOPLIST_FILE = beerhunt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.nobuyoshi.shimmen.beerhunt;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.nobuyoshi.shimmen.beerhunt${BUNDLE_ID_SUFFIX}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -391,6 +392,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_ID_SUFFIX = .debug;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -422,6 +424,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FIREBASE_CONFIG_FILE = "GoogleService-Info-staging";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -436,6 +439,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GOOGLE_PLACE_SECRET_KEY = AIzaSyBWtQz9k0F85rUSQqLeaUtOlKnPzM8zaFM;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -450,6 +454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_ID_SUFFIX = "";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -481,6 +486,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FIREBASE_CONFIG_FILE = "GoogleService-Info";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -489,6 +495,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GOOGLE_PLACE_SECRET_KEY = AIzaSyAhJbjf10FDTyBYhJc5Q0jC75a3Oi5PwiY;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -505,7 +512,7 @@
 				DEVELOPMENT_TEAM = 6DK3BC5XAV;
 				INFOPLIST_FILE = beerhunt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.nobuyoshi.shimmen.beerhunt;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.nobuyoshi.shimmen.beerhunt${BUNDLE_ID_SUFFIX}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -520,7 +527,7 @@
 				DEVELOPMENT_TEAM = 6DK3BC5XAV;
 				INFOPLIST_FILE = beerhunt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.nobuyoshi.shimmen.beerhunt;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.nobuyoshi.shimmen.beerhunt${BUNDLE_ID_SUFFIX}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;

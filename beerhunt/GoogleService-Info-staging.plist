@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>304849434172-ia1g3nnqt14lioav6rld4hel2349nq71.apps.googleusercontent.com</string>
+	<string>304849434172-arjhaamfl5v2mq9ipjnp9gtau0h90p41.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.304849434172-ia1g3nnqt14lioav6rld4hel2349nq71</string>
+	<string>com.googleusercontent.apps.304849434172-arjhaamfl5v2mq9ipjnp9gtau0h90p41</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBWtQz9k0F85rUSQqLeaUtOlKnPzM8zaFM</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.gmail.nobuyoshi.shimmen.beerhunt</string>
+	<string>com.gmail.nobuyoshi.shimmen.beerhunt.staging</string>
 	<key>PROJECT_ID</key>
 	<string>beerhunt-staging</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:304849434172:ios:9b8398063cd46bc7</string>
+	<string>1:304849434172:ios:006f9de6d2f48cb6</string>
 	<key>DATABASE_URL</key>
 	<string>https://beerhunt-staging.firebaseio.com</string>
 </dict>

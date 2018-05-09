@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>GOOGLE_PLACE_SECRET_KEY</key>
+	<string>$(GOOGLE_PLACE_SECRET_KEY)</string>
+	<key>FIREBASE_CONFIG_FILE</key>
+	<string>$(FIREBASE_CONFIG_FILE)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>ja_JP</string>
 	<key>CFBundleExecutable</key>
