@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>GOOGLE_PLACE_SECRET_KEY</key>
-	<string>$(GOOGLE_PLACE_SECRET_KEY)</string>
-	<key>FIREBASE_CONFIG_FILE</key>
-	<string>$(FIREBASE_CONFIG_FILE)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>ja_JP</string>
 	<key>CFBundleExecutable</key>
@@ -20,12 +16,59 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.04</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.304849434172-arjhaamfl5v2mq9ipjnp9gtau0h90p41</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.911025607065-nbpq1iqho4a3omq5se3hshj4ae35uo1o</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb980716008763030</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1995238937360451</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
+	<key>FIREBASE_CONFIG_FILE</key>
+	<string>$(FIREBASE_CONFIG_FILE)</string>
+	<key>FacebookAppID</key>
+	<string>$(FACEBOOK_APP_ID)</string>
+	<key>FacebookDisplayName</key>
+	<string>$(FACEBOOK_DISPLAY_NAME)</string>
+	<key>GOOGLE_PLACE_SECRET_KEY</key>
+	<string>$(GOOGLE_PLACE_SECRET_KEY)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>カメラでの撮影ができるようになります</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>beerhuntは周辺のクラフトビールを検索するために位置情報を利用します</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>アルバムから画像を選択できるようになります</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

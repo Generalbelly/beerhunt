@@ -17,24 +17,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        UINavigationBar.appearance().barTintColor = UIColor.init(red: 246/255.0, green: 166/255.0, blue: 35/255.0, alpha: 1.0)
-//        UINavigationBar.appearance().tintColor = UIColor.init(red: 44/255.0, green: 28/255.0, blue: 2/255.0, alpha: 1.0)
-        UINavigationBar.appearance().tintColor = UIColor.black
-        UINavigationBar.appearance().isTranslucent = false
-        UITabBar.appearance().tintColor = UIColor.init(red: 246/255.0, green: 166/255.0, blue: 35/255.0, alpha: 1.0)
         FirebaseConfiguration.shared.setLoggerLevel(.error)
 
-        let configFile = Bundle.main.object(forInfoDictionaryKey: "FIREBASE_CONFIG_FILE") as! String
-        print(configFile)
+        guard let configFile = Bundle.main.object(forInfoDictionaryKey: "FIREBASE_CONFIG_FILE") as? String else {
+            preconditionFailure("Did you correctly set firebase config file name?")
+        }
         let filePath = Bundle.main.path(forResource: configFile, ofType: "plist")
         guard let fileopts = FirebaseOptions(contentsOfFile: filePath!) else { assert(false, "Couldn't load config file") }
         FirebaseApp.configure(options: fileopts)
-        
-        let googlePlaceSecretKey = Bundle.main.object(forInfoDictionaryKey: "GOOGLE_PLACE_SECRET_KEY") as! String
-        print(googlePlaceSecretKey)
+//        Database.database().isPersistenceEnabled = true
+
+        guard let googlePlaceSecretKey = Bundle.main.object(forInfoDictionaryKey: "GOOGLE_PLACE_SECRET_KEY") as? String else {
+            preconditionFailure("Did you correctly set google place secret key?")
+        }
         GMSPlacesClient.provideAPIKey(googlePlaceSecretKey)
         URLCache.shared = URLCache(memoryCapacity: 0, diskCapacity: 0, diskPath: nil)
+
+        let defaults = UserDefaults.standard
+        let favorite = defaults.object(forKey: Constants.User.favorites.rawValue) as? [String]
+        if favorite == nil {
+            defaults.set([], forKey: Constants.User.favorites.rawValue)
+        }
+
         return true
+    }
+
+    func application(_ app: UIApplication, open url: URL,
+                     options: [UIApplicationOpenURLOptionsKey: Any]) -> Bool {
+        let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String?
+        if FUIAuth.defaultAuthUI()?.handleOpen(url, sourceApplication: sourceApplication) ?? false {
+            return true
+        }
+        // other URL handling goes here.
+        return false
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -59,6 +74,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
-

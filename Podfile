@@ -7,9 +7,16 @@ target 'beerhunt' do
 
   # Pods for beerhunt
     pod 'Firebase/Core'
-    pod 'FirebaseDatabase'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Database'
+    pod 'Firebase/Storage'
     pod 'GooglePlaces'
     pod 'DZNEmptyDataSet'
     pod 'ImageSlideshow'
     pod 'Eureka'
+    pod 'SwiftLint'
+    pod 'LicensePlist'
+    pod 'YPImagePicker'
+    pod 'SearchTextField'
+    pod 'SwiftValidator', :git => 'https://github.com/jpotts18/SwiftValidator.git', :branch => 'master'
 end

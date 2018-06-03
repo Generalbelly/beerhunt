@@ -7,47 +7,68 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		002A22741FA379EE00A41DA4 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002A22731FA379EE00A41DA4 /* RoundedButton.swift */; };
-		003D232F1F5EEF140042DF2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D232E1F5EEF140042DF2F /* AppDelegate.swift */; };
-		003D23311F5EEF140042DF2F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D23301F5EEF140042DF2F /* SearchViewController.swift */; };
-		003D23341F5EEF140042DF2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003D23321F5EEF140042DF2F /* Main.storyboard */; };
-		003D23361F5EEF140042DF2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 003D23351F5EEF140042DF2F /* Assets.xcassets */; };
-		003D23391F5EEF140042DF2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003D23371F5EEF140042DF2F /* LaunchScreen.storyboard */; };
-		0086323C1FA3F95A008C36AC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0086323B1FA3F95A008C36AC /* Constants.swift */; };
-		0086323E1FA40FB0008C36AC /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0086323D1FA40FB0008C36AC /* FavoritesViewController.swift */; };
-		00AE82011F617D380032FB78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00AE82001F617D380032FB78 /* GoogleService-Info.plist */; };
-		00AE82081F63670D0032FB78 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE82071F63670D0032FB78 /* Restaurant.swift */; };
-		00AE820A1F66BF5D0032FB78 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE82091F66BF5D0032FB78 /* Station.swift */; };
-		00AE820C1F66CC140032FB78 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE820B1F66CC140032FB78 /* ResultViewController.swift */; };
-		00AE820E1F69754D0032FB78 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE820D1F69754D0032FB78 /* RestaurantTableViewCell.swift */; };
-		00AE82101F6AB69E0032FB78 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE820F1F6AB69E0032FB78 /* RestaurantViewController.swift */; };
-		00C736791F6F6A42009C0635 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C736781F6F6A42009C0635 /* InfoTableViewCell.swift */; };
-		00C7367B1F6F999B009C0635 /* RequestFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C7367A1F6F999B009C0635 /* RequestFormViewController.swift */; };
-		00EF0D9C20A3B54E0052522E /* GoogleService-Info-staging.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00EF0D9B20A3B54E0052522E /* GoogleService-Info-staging.plist */; };
+		001FD7B520C2C0F800557EFB /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001FD7B420C2C0F800557EFB /* SignupViewController.swift */; };
+		001FD7B720C36D1200557EFB /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001FD7B620C36D1200557EFB /* ForgetPasswordViewController.swift */; };
+		0041CC5D20B01CE000CD2EA0 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC5620B01CDE00CD2EA0 /* RestaurantViewController.swift */; };
+		0041CC5F20B01CE000CD2EA0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC5820B01CDF00CD2EA0 /* HomeViewController.swift */; };
+		0041CC6020B01CE000CD2EA0 /* RequestFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC5920B01CDF00CD2EA0 /* RequestFormViewController.swift */; };
+		0041CC6120B01CE000CD2EA0 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC5A20B01CDF00CD2EA0 /* ResultViewController.swift */; };
+		0041CC6220B01CE000CD2EA0 /* SearchableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC5B20B01CE000CD2EA0 /* SearchableItem.swift */; };
+		0041CC7620B01CF500CD2EA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC6320B01CEE00CD2EA0 /* AppDelegate.swift */; };
+		0041CC7720B01CF500CD2EA0 /* PlacesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC6420B01CEF00CD2EA0 /* PlacesClient.swift */; };
+		0041CC7920B01CF500CD2EA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0041CC6620B01CEF00CD2EA0 /* Assets.xcassets */; };
+		0041CC7A20B01CF500CD2EA0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC6720B01CF000CD2EA0 /* Constants.swift */; };
+		0041CC7B20B01CF500CD2EA0 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC6820B01CF000CD2EA0 /* FavoritesViewController.swift */; };
+		0041CC7C20B01CF500CD2EA0 /* GoogleService-Info-staging.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0041CC6920B01CF100CD2EA0 /* GoogleService-Info-staging.plist */; };
+		0041CC7D20B01CF500CD2EA0 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC6A20B01CF100CD2EA0 /* RoundedButton.swift */; };
+		0041CC7E20B01CF500CD2EA0 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC6B20B01CF100CD2EA0 /* InfoTableViewCell.swift */; };
+		0041CC7F20B01CF500CD2EA0 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC6C20B01CF100CD2EA0 /* Restaurant.swift */; };
+		0041CC8020B01CF500CD2EA0 /* PostRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC6D20B01CF200CD2EA0 /* PostRestaurantViewController.swift */; };
+		0041CC8120B01CF500CD2EA0 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC6E20B01CF200CD2EA0 /* Station.swift */; };
+		0041CC8320B01CF500CD2EA0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0041CC7020B01CF300CD2EA0 /* GoogleService-Info.plist */; };
+		0041CC8520B01CF500CD2EA0 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC7220B01CF300CD2EA0 /* RestaurantTableViewCell.swift */; };
+		00DF635D20B024F4003FB609 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00DF635920B024F4003FB609 /* LaunchScreen.storyboard */; };
+		00DF635E20B024F4003FB609 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00DF635B20B024F4003FB609 /* Main.storyboard */; };
+		00DF636220B06D63003FB609 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DF636120B06D63003FB609 /* Model.swift */; };
+		00DF636620B0E652003FB609 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DF636520B0E652003FB609 /* CustomTabBarController.swift */; };
+		00DF636C20B30DC2003FB609 /* SearchPushRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DF636B20B30DC2003FB609 /* SearchPushRow.swift */; };
+		00DF636E20B312CA003FB609 /* SearchItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DF636D20B312CA003FB609 /* SearchItemModel.swift */; };
+		00DF637520BF5E8B003FB609 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DF637420BF5E8B003FB609 /* LoginViewController.swift */; };
 		61DF87F250EAB3F14871F665 /* Pods_beerhunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C164FDE9422869FE79DE73 /* Pods_beerhunt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		002A22731FA379EE00A41DA4 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		001FD7B420C2C0F800557EFB /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		001FD7B620C36D1200557EFB /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		003D232B1F5EEF140042DF2F /* beerhunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = beerhunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		003D232E1F5EEF140042DF2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		003D23301F5EEF140042DF2F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		003D23331F5EEF140042DF2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		003D23351F5EEF140042DF2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		003D23381F5EEF140042DF2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		003D233A1F5EEF140042DF2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0086323B1FA3F95A008C36AC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		0086323D1FA40FB0008C36AC /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
-		00AE82001F617D380032FB78 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0041CC5620B01CDE00CD2EA0 /* RestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
+		0041CC5820B01CDF00CD2EA0 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0041CC5920B01CDF00CD2EA0 /* RequestFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestFormViewController.swift; sourceTree = "<group>"; };
+		0041CC5A20B01CDF00CD2EA0 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		0041CC5B20B01CE000CD2EA0 /* SearchableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchableItem.swift; sourceTree = "<group>"; };
+		0041CC6320B01CEE00CD2EA0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0041CC6420B01CEF00CD2EA0 /* PlacesClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesClient.swift; sourceTree = "<group>"; };
+		0041CC6620B01CEF00CD2EA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0041CC6720B01CF000CD2EA0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0041CC6820B01CF000CD2EA0 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		0041CC6920B01CF100CD2EA0 /* GoogleService-Info-staging.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-staging.plist"; sourceTree = "<group>"; };
+		0041CC6A20B01CF100CD2EA0 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		0041CC6B20B01CF100CD2EA0 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
+		0041CC6C20B01CF100CD2EA0 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		0041CC6D20B01CF200CD2EA0 /* PostRestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostRestaurantViewController.swift; sourceTree = "<group>"; };
+		0041CC6E20B01CF200CD2EA0 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		0041CC6F20B01CF200CD2EA0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0041CC7020B01CF300CD2EA0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0041CC7220B01CF300CD2EA0 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		00AE82051F6185BE0032FB78 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		00AE82071F63670D0032FB78 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
-		00AE82091F66BF5D0032FB78 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
-		00AE820B1F66CC140032FB78 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
-		00AE820D1F69754D0032FB78 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
-		00AE820F1F6AB69E0032FB78 /* RestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
-		00C736781F6F6A42009C0635 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
-		00C7367A1F6F999B009C0635 /* RequestFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestFormViewController.swift; sourceTree = "<group>"; };
-		00EF0D9B20A3B54E0052522E /* GoogleService-Info-staging.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-staging.plist"; sourceTree = "<group>"; };
+		00DF635A20B024F4003FB609 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		00DF635C20B024F4003FB609 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		00DF636120B06D63003FB609 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		00DF636520B0E652003FB609 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		00DF636B20B30DC2003FB609 /* SearchPushRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPushRow.swift; sourceTree = "<group>"; };
+		00DF636D20B312CA003FB609 /* SearchItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemModel.swift; sourceTree = "<group>"; };
+		00DF636F20B4D81A003FB609 /* beerhunt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = beerhunt.entitlements; sourceTree = "<group>"; };
+		00DF637420BF5E8B003FB609 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3A9FFB62FF909A141292213E /* Pods-beerhunt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beerhunt.release.xcconfig"; path = "Pods/Target Support Files/Pods-beerhunt/Pods-beerhunt.release.xcconfig"; sourceTree = "<group>"; };
 		9899DFB71798E05A9FA0703F /* Pods-beerhunt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beerhunt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beerhunt/Pods-beerhunt.debug.xcconfig"; sourceTree = "<group>"; };
 		A7C164FDE9422869FE79DE73 /* Pods_beerhunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beerhunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,26 +108,69 @@
 		003D232D1F5EEF140042DF2F /* beerhunt */ = {
 			isa = PBXGroup;
 			children = (
-				003D232E1F5EEF140042DF2F /* AppDelegate.swift */,
-				003D23301F5EEF140042DF2F /* SearchViewController.swift */,
-				00AE820D1F69754D0032FB78 /* RestaurantTableViewCell.swift */,
-				00AE820B1F66CC140032FB78 /* ResultViewController.swift */,
-				00AE820F1F6AB69E0032FB78 /* RestaurantViewController.swift */,
-				0086323D1FA40FB0008C36AC /* FavoritesViewController.swift */,
-				00C7367A1F6F999B009C0635 /* RequestFormViewController.swift */,
-				002A22731FA379EE00A41DA4 /* RoundedButton.swift */,
-				00C736781F6F6A42009C0635 /* InfoTableViewCell.swift */,
-				00AE82071F63670D0032FB78 /* Restaurant.swift */,
-				00AE82091F66BF5D0032FB78 /* Station.swift */,
-				003D23321F5EEF140042DF2F /* Main.storyboard */,
-				003D23351F5EEF140042DF2F /* Assets.xcassets */,
-				0086323B1FA3F95A008C36AC /* Constants.swift */,
-				003D23371F5EEF140042DF2F /* LaunchScreen.storyboard */,
-				003D233A1F5EEF140042DF2F /* Info.plist */,
-				00EF0D9B20A3B54E0052522E /* GoogleService-Info-staging.plist */,
-				00AE82001F617D380032FB78 /* GoogleService-Info.plist */,
+				00DF636F20B4D81A003FB609 /* beerhunt.entitlements */,
+				0041CC6320B01CEE00CD2EA0 /* AppDelegate.swift */,
+				00DF635820B023C2003FB609 /* Views */,
+				00DF635720B02363003FB609 /* Helpers */,
+				00DF635620B022D2003FB609 /* Controllers */,
+				00DF635520B022BE003FB609 /* Models */,
+				00DF635920B024F4003FB609 /* LaunchScreen.storyboard */,
+				00DF635B20B024F4003FB609 /* Main.storyboard */,
+				0041CC6620B01CEF00CD2EA0 /* Assets.xcassets */,
+				0041CC6920B01CF100CD2EA0 /* GoogleService-Info-staging.plist */,
+				0041CC7020B01CF300CD2EA0 /* GoogleService-Info.plist */,
+				0041CC6F20B01CF200CD2EA0 /* Info.plist */,
 			);
 			path = beerhunt;
+			sourceTree = "<group>";
+		};
+		00DF635520B022BE003FB609 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0041CC6C20B01CF100CD2EA0 /* Restaurant.swift */,
+				0041CC6E20B01CF200CD2EA0 /* Station.swift */,
+				00DF636120B06D63003FB609 /* Model.swift */,
+				0041CC5B20B01CE000CD2EA0 /* SearchableItem.swift */,
+				00DF636D20B312CA003FB609 /* SearchItemModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		00DF635620B022D2003FB609 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0041CC6820B01CF000CD2EA0 /* FavoritesViewController.swift */,
+				00DF636520B0E652003FB609 /* CustomTabBarController.swift */,
+				0041CC6D20B01CF200CD2EA0 /* PostRestaurantViewController.swift */,
+				0041CC5820B01CDF00CD2EA0 /* HomeViewController.swift */,
+				0041CC5920B01CDF00CD2EA0 /* RequestFormViewController.swift */,
+				0041CC5620B01CDE00CD2EA0 /* RestaurantViewController.swift */,
+				0041CC5A20B01CDF00CD2EA0 /* ResultViewController.swift */,
+				00DF637420BF5E8B003FB609 /* LoginViewController.swift */,
+				001FD7B420C2C0F800557EFB /* SignupViewController.swift */,
+				001FD7B620C36D1200557EFB /* ForgetPasswordViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		00DF635720B02363003FB609 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0041CC6720B01CF000CD2EA0 /* Constants.swift */,
+				0041CC6420B01CEF00CD2EA0 /* PlacesClient.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		00DF635820B023C2003FB609 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0041CC6B20B01CF100CD2EA0 /* InfoTableViewCell.swift */,
+				0041CC7220B01CF300CD2EA0 /* RestaurantTableViewCell.swift */,
+				00DF636B20B30DC2003FB609 /* SearchPushRow.swift */,
+				0041CC6A20B01CF100CD2EA0 /* RoundedButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		5C91D53D00C91BC28BED03E1 /* Frameworks */ = {
@@ -141,6 +205,7 @@
 				003D23291F5EEF140042DF2F /* Resources */,
 				84A278C0349CF4D0B3E67F0F /* [CP] Embed Pods Frameworks */,
 				EDE532D9AE0DA2BE1640C54B /* [CP] Copy Pods Resources */,
+				00EF0D9D20A66A320052522E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -166,6 +231,11 @@
 						DevelopmentTeam = 6DK3BC5XAV;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -192,17 +262,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00EF0D9C20A3B54E0052522E /* GoogleService-Info-staging.plist in Resources */,
-				003D23391F5EEF140042DF2F /* LaunchScreen.storyboard in Resources */,
-				00AE82011F617D380032FB78 /* GoogleService-Info.plist in Resources */,
-				003D23361F5EEF140042DF2F /* Assets.xcassets in Resources */,
-				003D23341F5EEF140042DF2F /* Main.storyboard in Resources */,
+				00DF635E20B024F4003FB609 /* Main.storyboard in Resources */,
+				0041CC7C20B01CF500CD2EA0 /* GoogleService-Info-staging.plist in Resources */,
+				0041CC8320B01CF500CD2EA0 /* GoogleService-Info.plist in Resources */,
+				00DF635D20B024F4003FB609 /* LaunchScreen.storyboard in Resources */,
+				0041CC7920B01CF500CD2EA0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		00EF0D9D20A66A320052522E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n    ${PODS_ROOT}/SwiftLint/swiftlint autocorrect\n    ${PODS_ROOT}/SwiftLint/swiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\nif [ $CONFIGURATION = \"Debug\" ]; then\n    ${PODS_ROOT}/LicensePlist/license-plist --output-path $PRODUCT_NAME/Settings.bundle\nfi";
+		};
 		84A278C0349CF4D0B3E67F0F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -212,8 +295,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-beerhunt/Pods-beerhunt-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftValidator/SwiftValidator.framework",
+				"${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -221,8 +309,13 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftValidator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YPImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -274,38 +367,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00AE820C1F66CC140032FB78 /* ResultViewController.swift in Sources */,
-				00C736791F6F6A42009C0635 /* InfoTableViewCell.swift in Sources */,
-				00C7367B1F6F999B009C0635 /* RequestFormViewController.swift in Sources */,
-				003D23311F5EEF140042DF2F /* SearchViewController.swift in Sources */,
-				00AE82101F6AB69E0032FB78 /* RestaurantViewController.swift in Sources */,
-				002A22741FA379EE00A41DA4 /* RoundedButton.swift in Sources */,
-				00AE82081F63670D0032FB78 /* Restaurant.swift in Sources */,
-				00AE820A1F66BF5D0032FB78 /* Station.swift in Sources */,
-				00AE820E1F69754D0032FB78 /* RestaurantTableViewCell.swift in Sources */,
-				003D232F1F5EEF140042DF2F /* AppDelegate.swift in Sources */,
-				0086323E1FA40FB0008C36AC /* FavoritesViewController.swift in Sources */,
-				0086323C1FA3F95A008C36AC /* Constants.swift in Sources */,
+				001FD7B720C36D1200557EFB /* ForgetPasswordViewController.swift in Sources */,
+				0041CC6120B01CE000CD2EA0 /* ResultViewController.swift in Sources */,
+				0041CC5D20B01CE000CD2EA0 /* RestaurantViewController.swift in Sources */,
+				0041CC6020B01CE000CD2EA0 /* RequestFormViewController.swift in Sources */,
+				0041CC7720B01CF500CD2EA0 /* PlacesClient.swift in Sources */,
+				0041CC6220B01CE000CD2EA0 /* SearchableItem.swift in Sources */,
+				0041CC8120B01CF500CD2EA0 /* Station.swift in Sources */,
+				0041CC7A20B01CF500CD2EA0 /* Constants.swift in Sources */,
+				00DF636220B06D63003FB609 /* Model.swift in Sources */,
+				00DF637520BF5E8B003FB609 /* LoginViewController.swift in Sources */,
+				00DF636620B0E652003FB609 /* CustomTabBarController.swift in Sources */,
+				0041CC5F20B01CE000CD2EA0 /* HomeViewController.swift in Sources */,
+				0041CC8520B01CF500CD2EA0 /* RestaurantTableViewCell.swift in Sources */,
+				0041CC7B20B01CF500CD2EA0 /* FavoritesViewController.swift in Sources */,
+				0041CC8020B01CF500CD2EA0 /* PostRestaurantViewController.swift in Sources */,
+				00DF636C20B30DC2003FB609 /* SearchPushRow.swift in Sources */,
+				001FD7B520C2C0F800557EFB /* SignupViewController.swift in Sources */,
+				0041CC7E20B01CF500CD2EA0 /* InfoTableViewCell.swift in Sources */,
+				0041CC7D20B01CF500CD2EA0 /* RoundedButton.swift in Sources */,
+				0041CC7620B01CF500CD2EA0 /* AppDelegate.swift in Sources */,
+				0041CC7F20B01CF500CD2EA0 /* Restaurant.swift in Sources */,
+				00DF636E20B312CA003FB609 /* SearchItemModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		003D23321F5EEF140042DF2F /* Main.storyboard */ = {
+		00DF635920B024F4003FB609 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				003D23331F5EEF140042DF2F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		003D23371F5EEF140042DF2F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				003D23381F5EEF140042DF2F /* Base */,
+				00DF635A20B024F4003FB609 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		00DF635B20B024F4003FB609 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00DF635C20B024F4003FB609 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -347,6 +450,8 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FACEBOOK_APP_ID = fb980716008763030;
+				FACEBOOK_DISPLAY_NAME = "beerhunt-staging";
 				FIREBASE_CONFIG_FILE = "GoogleService-Info-staging";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -378,6 +483,7 @@
 			baseConfigurationReference = F9A715BDA583841EF7DD061B /* Pods-beerhunt.staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = beerhunt/beerhunt.entitlements;
 				DEVELOPMENT_TEAM = 6DK3BC5XAV;
 				INFOPLIST_FILE = beerhunt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -424,6 +530,8 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FACEBOOK_APP_ID = fb980716008763030;
+				FACEBOOK_DISPLAY_NAME = "beerhunt-debug";
 				FIREBASE_CONFIG_FILE = "GoogleService-Info-staging";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -486,6 +594,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FACEBOOK_APP_ID = fb1995238937360451;
+				FACEBOOK_DISPLAY_NAME = beerhunt;
 				FIREBASE_CONFIG_FILE = "GoogleService-Info";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -509,6 +619,7 @@
 			baseConfigurationReference = 9899DFB71798E05A9FA0703F /* Pods-beerhunt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = beerhunt/beerhunt.entitlements;
 				DEVELOPMENT_TEAM = 6DK3BC5XAV;
 				INFOPLIST_FILE = beerhunt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -524,6 +635,7 @@
 			baseConfigurationReference = 3A9FFB62FF909A141292213E /* Pods-beerhunt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = beerhunt/beerhunt.entitlements;
 				DEVELOPMENT_TEAM = 6DK3BC5XAV;
 				INFOPLIST_FILE = beerhunt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

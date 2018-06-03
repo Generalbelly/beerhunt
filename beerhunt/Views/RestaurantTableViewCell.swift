@@ -15,8 +15,7 @@ class RestaurantTableViewCell: UITableViewCell {
     @IBOutlet weak var subLabel: UILabel!
     @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

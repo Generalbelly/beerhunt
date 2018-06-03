@@ -9,7 +9,7 @@
 import Foundation
 
 struct Constants {
-    enum User : String {
+    enum User: String {
         case favorites
     }
 }

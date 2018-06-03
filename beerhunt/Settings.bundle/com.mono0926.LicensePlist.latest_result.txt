@@ -1,0 +1,129 @@
+name: Bolts, nameSpecified: 
+body: BSD License
+
+For Bol…
+version: 1.9.0
+
+name: DZNEmptyDataSet, nameSpecified: 
+body: The MIT License (MIT…
+version: 1.8.1
+
+name: Eureka, nameSpecified: 
+body: The MIT License (MIT…
+version: 4.1.1
+
+name: FBSDKCoreKit, nameSpecified: 
+body: Copyright (c) 2014-p…
+version: 4.33.0
+
+name: FBSDKLoginKit, nameSpecified: 
+body: Copyright (c) 2014-p…
+version: 4.33.0
+
+name: Firebase, nameSpecified: 
+body: Copyright 2018 Googl…
+version: 5.0.0
+
+name: FirebaseAnalytics, nameSpecified: 
+body: Copyright 2018 Googl…
+version: 5.0.0
+
+name: FirebaseAuth, nameSpecified: 
+body: 
+                   …
+version: 5.0.0
+
+name: FirebaseCore, nameSpecified: 
+body: 
+                   …
+version: 5.0.0
+
+name: FirebaseDatabase, nameSpecified: 
+body: 
+                   …
+version: 5.0.0
+
+name: FirebaseInstanceID, nameSpecified: 
+body: Copyright 2018 Googl…
+version: 3.0.0
+
+name: FirebaseStorage, nameSpecified: 
+body: 
+                   …
+version: 3.0.0
+
+name: FirebaseUI, nameSpecified: 
+body: 
+                   …
+version: 5.0.0
+
+name: GoogleMaps, nameSpecified: 
+body: Copyright 2018 Googl…
+version: 2.7.0
+
+name: GooglePlaces, nameSpecified: 
+body: Copyright 2018 Googl…
+version: 2.7.0
+
+name: GoogleSignIn, nameSpecified: 
+body: Copyright 2018 Googl…
+version: 4.1.2
+
+name: GoogleToolboxForMac, nameSpecified: 
+body: 
+                   …
+version: 2.1.4
+
+name: GTMOAuth2, nameSpecified: 
+body: 
+                   …
+version: 1.1.6
+
+name: GTMSessionFetcher, nameSpecified: 
+body: 
+                   …
+version: 1.1.15
+
+name: ImageSlideshow, nameSpecified: 
+body: Copyright (c) 2015 P…
+version: 1.5.3
+
+name: leveldb-library, nameSpecified: 
+body: Copyright (c) 2011 T…
+version: 1.20
+
+name: LicensePlist, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 1.8.3
+
+name: nanopb, nameSpecified: 
+body: Copyright (c) 2011 P…
+version: 0.3.8
+
+name: SearchTextField, nameSpecified: 
+body: Copyright (c) 2016 A…
+version: 1.2.0
+
+name: SteviaLayout, nameSpecified: 
+body: The MIT License (MIT…
+version: 4.2.0
+
+name: SwiftLint, nameSpecified: 
+body: The MIT License (MIT…
+version: 0.25.1
+
+name: SwiftValidator, nameSpecified: 
+body: The MIT License
+
+Cop…
+version: 4.0.0
+
+name: YPImagePicker, nameSpecified: 
+body: The MIT License (MIT…
+version: 2.8.1
+
+add-version-numbers: false
+
+LicensePlist Version: 1.8.3
