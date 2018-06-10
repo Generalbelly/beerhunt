@@ -45,14 +45,12 @@ class ResultViewController: UIViewController {
                         {
                             strongSelf.restaurants.append(restaurant)
                             guard let placeId = restaurant.placeId else { return }
-                            DispatchQueue.global(qos: .default).async {
-                                strongSelf.placesClient.fetchGooglePlaceInfo(placeId: placeId) { place in
-                                    guard let place = place else { return }
-                                    restaurant.address = place.formattedAddress
-                                    restaurant.attributions = place.attributions?.string
-                                    restaurant.phoneNumber = place.phoneNumber?.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "+81", with: "0")
-                                    restaurant.website = place.website?.absoluteString
-                                }
+                            strongSelf.placesClient.fetchGooglePlaceInfo(placeId: placeId) { place in
+                                guard let place = place else { return }
+                                restaurant.address = place.formattedAddress
+                                restaurant.attributions = place.attributions?.string
+                                restaurant.phoneNumber = place.phoneNumber?.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "+81", with: "0")
+                                restaurant.website = place.website?.absoluteString
                             }
                         }
                     }
@@ -110,28 +108,18 @@ extension ResultViewController: UITableViewDelegate, UITableViewDataSource {
         let restaurant = restaurants[indexPath.row]
         cell.mainLabel!.text = restaurant.name
         cell.subLabel!.text = (self.station != nil) ? restaurant.travelTime : "徒歩\(restaurant.distance! / 80)分"
-        DispatchQueue.global(qos: .userInteractive).async { [weak self] in
-            guard
-                let strongSelf = self,
-                let placeId = restaurant.placeId
-            else { return }
-            strongSelf.placesClient.lookUpPhotos(placeId: placeId) { [weak self] photos -> Void in
+        if let placeId = restaurant.placeId {
+            self.placesClient.lookUpPhotos(placeId: placeId) { [weak self] photos -> Void in
                 guard let strongSelf = self else { return }
                 if let photos = photos {
                     restaurant.metadata = photos.results
                     if let firstPhoto = photos.results.first {
-                        DispatchQueue.main.async {
-                            cell.activityIndicator.startAnimating()
-                            cell.activityIndicator.show()
-                            DispatchQueue.global(qos: .userInteractive).async {
-                                strongSelf.placesClient.loadImageForMetadata(photoMetadata: firstPhoto) { photo in
-                                    DispatchQueue.main.async {
-                                        cell.activityIndicator.stopAnimating()
-                                        cell.activityIndicator.hide()
-                                        cell.backgroundImageView.image = photo
-                                    }
-                                }
-                            }
+                        cell.activityIndicator.startAnimating()
+                        cell.activityIndicator.show()
+                        strongSelf.placesClient.loadImageForMetadata(photoMetadata: firstPhoto) { photo in
+                            cell.activityIndicator.stopAnimating()
+                            cell.activityIndicator.hide()
+                            cell.backgroundImageView.image = photo
                         }
                     }
                 }

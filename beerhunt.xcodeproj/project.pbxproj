@@ -34,6 +34,8 @@
 		00DF636C20B30DC2003FB609 /* SearchPushRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DF636B20B30DC2003FB609 /* SearchPushRow.swift */; };
 		00DF636E20B312CA003FB609 /* SearchItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DF636D20B312CA003FB609 /* SearchItemModel.swift */; };
 		00DF637520BF5E8B003FB609 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DF637420BF5E8B003FB609 /* LoginViewController.swift */; };
+		00F319A720CB8297004268D0 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319A620CB8297004268D0 /* AuthViewController.swift */; };
+		00F319A920CC9D26004268D0 /* SelectRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319A820CC9D26004268D0 /* SelectRestaurantViewController.swift */; };
 		61DF87F250EAB3F14871F665 /* Pods_beerhunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C164FDE9422869FE79DE73 /* Pods_beerhunt.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,8 @@
 		00DF636D20B312CA003FB609 /* SearchItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemModel.swift; sourceTree = "<group>"; };
 		00DF636F20B4D81A003FB609 /* beerhunt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = beerhunt.entitlements; sourceTree = "<group>"; };
 		00DF637420BF5E8B003FB609 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		00F319A620CB8297004268D0 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		00F319A820CC9D26004268D0 /* SelectRestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectR\U0001estaurantViewController.swift"; sourceTree = "<group>"; };
 		3A9FFB62FF909A141292213E /* Pods-beerhunt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beerhunt.release.xcconfig"; path = "Pods/Target Support Files/Pods-beerhunt/Pods-beerhunt.release.xcconfig"; sourceTree = "<group>"; };
 		9899DFB71798E05A9FA0703F /* Pods-beerhunt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beerhunt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beerhunt/Pods-beerhunt.debug.xcconfig"; sourceTree = "<group>"; };
 		A7C164FDE9422869FE79DE73 /* Pods_beerhunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beerhunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +143,7 @@
 		00DF635620B022D2003FB609 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				00F319A820CC9D26004268D0 /* SelectRestaurantViewController.swift */,
 				0041CC6820B01CF000CD2EA0 /* FavoritesViewController.swift */,
 				00DF636520B0E652003FB609 /* CustomTabBarController.swift */,
 				0041CC6D20B01CF200CD2EA0 /* PostRestaurantViewController.swift */,
@@ -147,6 +152,7 @@
 				0041CC5620B01CDE00CD2EA0 /* RestaurantViewController.swift */,
 				0041CC5A20B01CDF00CD2EA0 /* ResultViewController.swift */,
 				00DF637420BF5E8B003FB609 /* LoginViewController.swift */,
+				00F319A620CB8297004268D0 /* AuthViewController.swift */,
 				001FD7B420C2C0F800557EFB /* SignupViewController.swift */,
 				001FD7B620C36D1200557EFB /* ForgetPasswordViewController.swift */,
 			);
@@ -298,6 +304,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftValidator/SwiftValidator.framework",
@@ -312,6 +319,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftValidator.framework",
@@ -380,10 +388,12 @@
 				00DF636620B0E652003FB609 /* CustomTabBarController.swift in Sources */,
 				0041CC5F20B01CE000CD2EA0 /* HomeViewController.swift in Sources */,
 				0041CC8520B01CF500CD2EA0 /* RestaurantTableViewCell.swift in Sources */,
+				00F319A720CB8297004268D0 /* AuthViewController.swift in Sources */,
 				0041CC7B20B01CF500CD2EA0 /* FavoritesViewController.swift in Sources */,
 				0041CC8020B01CF500CD2EA0 /* PostRestaurantViewController.swift in Sources */,
 				00DF636C20B30DC2003FB609 /* SearchPushRow.swift in Sources */,
 				001FD7B520C2C0F800557EFB /* SignupViewController.swift in Sources */,
+				00F319A920CC9D26004268D0 /* SelectRestaurantViewController.swift in Sources */,
 				0041CC7E20B01CF500CD2EA0 /* InfoTableViewCell.swift in Sources */,
 				0041CC7D20B01CF500CD2EA0 /* RoundedButton.swift in Sources */,
 				0041CC7620B01CF500CD2EA0 /* AppDelegate.swift in Sources */,

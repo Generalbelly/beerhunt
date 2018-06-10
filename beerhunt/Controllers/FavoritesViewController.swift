@@ -57,27 +57,15 @@ class FavoritesViewController: UIViewController {
     }
 
     func fetchFavoriteRestaurant(key: String) {
-        self.ref.child("restaurants/\(key)").observeSingleEvent(
-            of: .value,
-            with: { [weak self] (snapshot) in
-                guard let strongSelf = self else { return }
-                for child in snapshot.children {
-                    if
-                        let snapshot = child as? DataSnapshot,
-                        let restaurant = Restaurant(snapshot: snapshot)
-                    {
-                        strongSelf.restaurants.append(restaurant)
-                    }
-                }
-                if strongSelf.restaurants.count == 1 {
-                    strongSelf.tableView.reloadEmptyDataSet()
-                } else {
-                    strongSelf.tableView.reloadData()
-                }
-            }, withCancel: { (error) in
-                print(error.localizedDescription)
+        self.ref.child("restaurants/\(key)").observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
+            guard let strongSelf = self else { return }
+            if let restaurant = Restaurant(snapshot: snapshot) {
+                strongSelf.restaurants.append(restaurant)
             }
-        )
+            if strongSelf.restaurants.count > 0 {
+                strongSelf.tableView.reloadData()
+            }
+        })
     }
 
 }
@@ -93,24 +81,19 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
         let restaurant = self.restaurants[indexPath.row]
         cell.mainLabel!.text = restaurant.name
         cell.subLabel!.text = ""
-        DispatchQueue.global(qos: .userInteractive).async { [weak self] in
-            guard
-                let strongSelf = self,
-                let placeId = restaurant.placeId
-            else { return }
-            strongSelf.placesClient.lookUpPhotos(placeId: placeId) { photos in
+        if let placeId = restaurant.placeId {
+            self.placesClient.lookUpPhotos(placeId: placeId) { [weak self]  photos in
                 if let photos = photos {
                     restaurant.metadata = photos.results
                     if let firstPhoto = photos.results.first {
-                        DispatchQueue.main.async {
-                            cell.activityIndicator.startAnimating()
-                            cell.activityIndicator.show()
-                            cell.backgroundImageView.image = nil
-                            strongSelf.placesClient.loadImageForMetadata(photoMetadata: firstPhoto) { photo in
-                                cell.activityIndicator.stopAnimating()
-                                cell.activityIndicator.hide()
-                                cell.backgroundImageView.image = photo
-                            }
+                        cell.activityIndicator.startAnimating()
+                        cell.activityIndicator.show()
+                        cell.backgroundImageView.image = nil
+                        guard let strongSelf = self else { return }
+                        strongSelf.placesClient.loadImageForMetadata(photoMetadata: firstPhoto) { photo in
+                            cell.activityIndicator.stopAnimating()
+                            cell.activityIndicator.hide()
+                            cell.backgroundImageView.image = photo
                         }
                     }
                 }

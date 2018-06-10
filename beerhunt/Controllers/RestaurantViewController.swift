@@ -61,28 +61,21 @@ class RestaurantViewController: UIViewController {
         if let metadata = self.restaurant.metadata {
             self.prepareSlideshow(metadata: metadata)
         } else {
-            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-                guard
-                    let strongSelf = self,
-                    let placeId = strongSelf.restaurant.placeId
-                else { return }
-                strongSelf.placesClient.fetchGooglePlaceInfo(placeId: placeId) { [weak self]  place in
-                    if let place = place, let strongSelf = self {
-                        strongSelf.restaurant.name = place.name
-                        strongSelf.restaurant.address = place.formattedAddress
-                        strongSelf.restaurant.attributions = place.attributions?.string
-                        strongSelf.restaurant.phoneNumber = place.phoneNumber?.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "+81", with: "0")
-                        strongSelf.restaurant.website = place.website?.absoluteString
-                        DispatchQueue.main.async {
-                            strongSelf.tableView.reloadData()
-                        }
-                    }
+            guard let placeId = self.restaurant.placeId else { return }
+            self.placesClient.fetchGooglePlaceInfo(placeId: placeId) { [weak self]  place in
+                if let place = place, let strongSelf = self {
+                    strongSelf.restaurant.name = place.name
+                    strongSelf.restaurant.address = place.formattedAddress
+                    strongSelf.restaurant.attributions = place.attributions?.string
+                    strongSelf.restaurant.phoneNumber = place.phoneNumber?.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "+81", with: "0")
+                    strongSelf.restaurant.website = place.website?.absoluteString
+                    strongSelf.tableView.reloadData()
                 }
-                strongSelf.placesClient.lookUpPhotos(placeId: placeId) { [weak self] photos -> Void in
-                    if let photos = photos, let strongSelf = self {
-                        strongSelf.restaurant.metadata = photos.results
-                        strongSelf.prepareSlideshow(metadata: photos.results)
-                    }
+            }
+            self.placesClient.lookUpPhotos(placeId: placeId) { [weak self] photos -> Void in
+                if let photos = photos, let strongSelf = self {
+                    strongSelf.restaurant.metadata = photos.results
+                    strongSelf.prepareSlideshow(metadata: photos.results)
                 }
             }
         }
@@ -108,24 +101,18 @@ class RestaurantViewController: UIViewController {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.picDidTap(_:)))
         self.slideShow.addGestureRecognizer(gestureRecognizer)
         self.slideShow.pageControlPosition = .underScrollView
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            guard let strongSelf = self else { return }
-            var inputs = [ImageSource]()
-            for (index, data) in metadata.enumerated() {
-                strongSelf.placesClient.loadImageForMetadata(photoMetadata: data, completion: { [weak self] image in
-                    DispatchQueue.main.async {
-                        guard let strongSelf = self else { return }
-                        if image != nil {
-                            inputs.append(ImageSource(image: image!))
-                        }
-                        if index == strongSelf.restaurant.metadata!.count - 1 {
-                            strongSelf.slideShow.setImageInputs(inputs)
-                        }
-                    }
-                })
-            }
+        var inputs = [ImageSource]()
+        for (index, data) in metadata.enumerated() {
+            self.placesClient.loadImageForMetadata(photoMetadata: data, completion: { [weak self] image in
+                guard let strongSelf = self else { return }
+                if image != nil {
+                    inputs.append(ImageSource(image: image!))
+                }
+                if index == strongSelf.restaurant.metadata!.count - 1 {
+                    strongSelf.slideShow.setImageInputs(inputs)
+                }
+            })
         }
-
     }
 
     func changeFavButtonColor(isFavorite: Bool) {

@@ -52,6 +52,7 @@ PODS:
   - nanopb/encode (0.3.8)
   - SearchTextField (1.2.0)
   - SteviaLayout (4.2.0)
+  - SVProgressHUD (2.2.5)
   - SwiftLint (0.25.1)
   - SwiftValidator (4.0.0)
   - YPImagePicker (2.8.1):
@@ -68,6 +69,7 @@ DEPENDENCIES:
   - ImageSlideshow
   - LicensePlist
   - SearchTextField
+  - SVProgressHUD
   - SwiftLint
   - SwiftValidator (from `https://github.com/jpotts18/SwiftValidator.git`, branch `master`)
   - YPImagePicker
@@ -102,10 +104,11 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SearchTextField: a5bb7e4c33affadb115afdbe8100d84ef10a8024
   SteviaLayout: 0d2112caea45707695e8c718262c8ea3dd37ef17
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
   SwiftValidator: 25ded5ca1f10c05adf57f6ac82a72d28ac8d91af
   YPImagePicker: 7b44e0ca5e969a18e83cd3b54cec2e0cb287a40e
 
-PODFILE CHECKSUM: c648a4f4eae7ecea63b94af2a08fec119d7dd22e
+PODFILE CHECKSUM: e7654daa7268243c4c6deb01bd89c2c290a6dabc
 
 COCOAPODS: 1.4.0

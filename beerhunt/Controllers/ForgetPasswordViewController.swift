@@ -9,6 +9,7 @@
 import UIKit
 import SwiftValidator
 import Firebase
+import SVProgressHUD
 
 class ForgetPasswordViewController: UIViewController {
 
@@ -24,7 +25,7 @@ class ForgetPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.validator.registerField(self.emailField, errorLabel: self.emailErrorLabel, rules: [RequiredRule(message: "必須項目です"), EmailRule(message: "不正なメールアドレスです")])
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.dismissKeyboard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
     }
@@ -57,7 +58,10 @@ extension ForgetPasswordViewController: ValidationDelegate {
 
     func validationSuccessful() {
         guard let email = self.emailField.text else { return }
+
+        SVProgressHUD.show()
         Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
+            SVProgressHUD.dismiss()
             if let error = error {
                 self.emailErrorLabel.text = error.localizedDescription
             } else {

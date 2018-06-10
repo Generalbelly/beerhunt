@@ -56,4 +56,10 @@ class Restaurant: Model {
         self.phoneNumber = data["phone_number"] as? String
         self.placeId = data["place_id"] as? String
     }
+
+    init(name: String, key: String?) {
+        super.init(snapshot: nil)
+        self.name = name
+        self.key = key
+    }
 }

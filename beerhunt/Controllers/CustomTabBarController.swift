@@ -84,11 +84,11 @@ extension CustomTabBarController: UITabBarControllerDelegate {
         self.currentTabIndex = index
         if index == 2 {
             if Auth.auth().currentUser != nil {
-                do {
-                    try Auth.auth().signOut()
-                } catch {
-
-                }
+//                do {
+//                    try Auth.auth().signOut()
+//                } catch {
+//
+//                }
                 self.showPicker()
             } else {
                 self.performSegue(withIdentifier: "login", sender: nil)
@@ -105,5 +105,24 @@ extension CustomTabBarController: UITabBarControllerDelegate {
     func showPicker() {
         guard let picker = self.picker else { return }
         self.present(picker, animated: true, completion: nil)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if
+            let nvc = segue.destination as? UINavigationController,
+            let lvc = nvc.topViewController as? LoginViewController
+        {
+            lvc.delegate = self
+        }
+    }
+}
+
+extension CustomTabBarController: AuthViewControllerDelegate {
+    func authView(didAuthenticate: Bool) {
+        if didAuthenticate {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.showPicker()
+            }
+        }
     }
 }

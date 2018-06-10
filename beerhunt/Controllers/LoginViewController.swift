@@ -9,8 +9,9 @@
 import UIKit
 import SwiftValidator
 import Firebase
+import SVProgressHUD
 
-class LoginViewController: UIViewController {
+class LoginViewController: AuthViewController {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var emailErrorLabel: UILabel!
@@ -27,19 +28,25 @@ class LoginViewController: UIViewController {
     @IBAction func cancelTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+
     let validator = Validator()
+    var userAuthenticated = false {
+        didSet {
+            self.delegate?.authView(didAuthenticate: self.userAuthenticated)
+            if self.userAuthenticated {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.validator.registerField(self.emailField, errorLabel: self.emailErrorLabel, rules: [RequiredRule(message: "必須項目です"), EmailRule(message: "不正なメールアドレスです")])
         self.validator.registerField(self.passwordField, errorLabel: self.passwordErrorLabel, rules: [RequiredRule(message: "必須項目です")])
+
         self.navigationController?.navigationBar.barTintColor = .black
         self.navigationController?.navigationBar.tintColor = .lightText
         self.navigationController?.navigationBar.isTranslucent = false
-
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        self.view.addGestureRecognizer(tap)
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -50,39 +57,15 @@ class LoginViewController: UIViewController {
     }
 
     deinit {
-        NotificationCenter.default.removeObserver(self)
         self.validator.unregisterField(self.emailField)
         self.validator.unregisterField(self.passwordField)
     }
 
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == (UIApplication.shared.statusBarFrame.height + (self.navigationController?.navigationBar.frame.height)!) {
-                self.view.frame.origin.y -= keyboardSize.height
-            }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let svc = segue.destination as? SignupViewController {
+            svc.delegate = self
         }
     }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
-        let baseY = (UIApplication.shared.statusBarFrame.height + (self.navigationController?.navigationBar.frame.height)!)
-        if self.view.frame.origin.y < baseY {
-            self.view.frame.origin.y = baseY
-        }
-    }
-
-    @objc func dismissKeyboard() {
-        self.view.endEditing(true)
-    }
-}
-
-extension LoginViewController: UITextFieldDelegate {
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        self.dismissKeyboard()
-        return true
-    }
-
 }
 
 extension LoginViewController: ValidationDelegate {
@@ -93,13 +76,19 @@ extension LoginViewController: ValidationDelegate {
             let password = self.passwordField.text
         else { return }
 
+        SVProgressHUD.show()
         Auth.auth().signIn(withEmail: email, password: password) { (authDataResult, error) in
-            if error != nil {
+            SVProgressHUD.dismiss()
+            if
+                let error = error,
+                let errorCode = AuthErrorCode(rawValue: (error as NSError).code)
+            {
                 self.loginErrorLabel.textColor = .red
 //                self.loginErrorLabel.text = error.localizedDescription
-                self.loginErrorLabel.text = "認証情報に一致するユーザが見つかりませんでした"
+                self.loginErrorLabel.text = errorCode.errorMessage
+                self.userAuthenticated = false
             } else if authDataResult != nil {
-                self.dismiss(animated: true, completion: nil)
+                self.userAuthenticated = true
             }
         }
     }
@@ -111,4 +100,10 @@ extension LoginViewController: ValidationDelegate {
         }
     }
 
+}
+
+extension LoginViewController: AuthViewControllerDelegate {
+    func authView(didAuthenticate: Bool) {
+        self.userAuthenticated = didAuthenticate
+    }
 }

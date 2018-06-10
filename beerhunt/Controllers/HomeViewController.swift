@@ -78,6 +78,8 @@ class HomeViewController: UIViewController {
     var selectedStation: Station?
     var selectedRestaurant: Restaurant?
 
+    var keyboardSize: CGSize?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -133,9 +135,12 @@ class HomeViewController: UIViewController {
     }
 
     @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size {
+            if self.keyboardSize == nil {
+                self.keyboardSize = keyboardSize
+            }
             if self.view.frame.origin.y == (UIApplication.shared.statusBarFrame.height + (self.navigationController?.navigationBar.frame.height)!) {
-                self.view.frame.origin.y -= keyboardSize.height
+                self.view.frame.origin.y -= (self.keyboardSize != nil) ? (self.keyboardSize?.height)! : keyboardSize.height
             }
         }
     }

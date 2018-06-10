@@ -9,8 +9,9 @@
 import UIKit
 import SwiftValidator
 import Firebase
+import SVProgressHUD
 
-class SignupViewController: UIViewController {
+class SignupViewController: AuthViewController {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var emailErrorLabel: UILabel!
@@ -33,20 +34,18 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var signupErrorLabel: UILabel!
 
     let validator = Validator()
+    var userAuthenticated = false {
+        didSet {
+            self.delegate?.authView(didAuthenticate: self.userAuthenticated)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.validator.registerField(self.emailField, errorLabel: self.emailErrorLabel, rules: [RequiredRule(message: "必須項目です"), EmailRule(message: "不正なメールアドレスです")])
-        self.validator.registerField(self.passwordField, errorLabel: self.passwordErrorLabel, rules: [RequiredRule(message: "必須項目です"), MinLengthRule(length: 8, message: "パスワードは最低8文字以上にしてください")])
+        self.validator.registerField(self.passwordField, errorLabel: self.passwordErrorLabel, rules: [RequiredRule(message: "必須項目です"), MinLengthRule(length: 6, message: "パスワードは最低6文字以上にしてください")])
         self.validator.registerField(self.passwordConfirmationField, errorLabel: self.passwordConfirmationErrorLabel, rules: [RequiredRule(message: "必須項目です"), ConfirmationRule(confirmField: self.passwordField, message: "パスワードと一致しません")])
         self.validator.registerField(self.usernameField, errorLabel: self.usernameErrorLabel, rules: [RequiredRule(message: "必須項目です")])
-
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        self.view.addGestureRecognizer(tap)
-
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -54,41 +53,11 @@ class SignupViewController: UIViewController {
     }
 
     deinit {
-        NotificationCenter.default.removeObserver(self)
         self.validator.unregisterField(self.emailField)
         self.validator.unregisterField(self.passwordField)
         self.validator.unregisterField(self.passwordConfirmationField)
         self.validator.unregisterField(self.usernameField)
     }
-
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == (UIApplication.shared.statusBarFrame.height + (self.navigationController?.navigationBar.frame.height)!) {
-                self.view.frame.origin.y -= keyboardSize.height
-            }
-        }
-    }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
-        let baseY = (UIApplication.shared.statusBarFrame.height + (self.navigationController?.navigationBar.frame.height)!)
-        if self.view.frame.origin.y < baseY {
-            self.view.frame.origin.y = baseY
-        }
-    }
-
-    @objc func dismissKeyboard() {
-        self.view.endEditing(true)
-    }
-}
-
-extension SignupViewController: UITextFieldDelegate {
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        self.dismissKeyboard()
-        return true
-    }
-
 }
 
 extension SignupViewController: ValidationDelegate {
@@ -99,10 +68,17 @@ extension SignupViewController: ValidationDelegate {
             let password = self.passwordField.text,
             let username = self.usernameField.text
         else { return }
+
+        SVProgressHUD.show()
         Auth.auth().createUser(withEmail: email, password: password, completion: { (authDataResult, error) in
-            if let error = error {
+            SVProgressHUD.dismiss()
+            if
+                let error = error,
+                let errorCode = AuthErrorCode(rawValue: (error as NSError).code)
+            {
                 self.signupErrorLabel.textColor = .red
-                self.signupErrorLabel.text = error.localizedDescription
+                self.signupErrorLabel.text = errorCode.errorMessage
+                self.userAuthenticated = false
             } else if authDataResult != nil {
                 let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
                 changeRequest?.displayName = username
@@ -112,6 +88,10 @@ extension SignupViewController: ValidationDelegate {
                         // TODO: send the error to server.
                     }
                 })
+                if let user = Auth.auth().currentUser {
+                    user.sendEmailVerification(completion: nil)
+                }
+                self.userAuthenticated = true
             }
         })
     }
