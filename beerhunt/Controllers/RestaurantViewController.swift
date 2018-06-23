@@ -98,7 +98,7 @@ class RestaurantViewController: UIViewController {
     }
 
     func prepareSlideshow(metadata: [GMSPlacePhotoMetadata]) {
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.picDidTap(_:)))
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(picDidTap(_:)))
         self.slideShow.addGestureRecognizer(gestureRecognizer)
         self.slideShow.pageControlPosition = .underScrollView
         var inputs = [ImageSource]()

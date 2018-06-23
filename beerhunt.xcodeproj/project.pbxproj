@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		001D15A020D5EF080087A1E5 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D159F20D5EF080087A1E5 /* Post.swift */; };
+		001D15A220DDCF2E0087A1E5 /* UserPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D15A120DDCF2E0087A1E5 /* UserPostViewController.swift */; };
 		001FD7B520C2C0F800557EFB /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001FD7B420C2C0F800557EFB /* SignupViewController.swift */; };
 		001FD7B720C36D1200557EFB /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001FD7B620C36D1200557EFB /* ForgetPasswordViewController.swift */; };
 		0041CC5D20B01CE000CD2EA0 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC5620B01CDE00CD2EA0 /* RestaurantViewController.swift */; };
@@ -23,7 +25,7 @@
 		0041CC7D20B01CF500CD2EA0 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC6A20B01CF100CD2EA0 /* RoundedButton.swift */; };
 		0041CC7E20B01CF500CD2EA0 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC6B20B01CF100CD2EA0 /* InfoTableViewCell.swift */; };
 		0041CC7F20B01CF500CD2EA0 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC6C20B01CF100CD2EA0 /* Restaurant.swift */; };
-		0041CC8020B01CF500CD2EA0 /* PostRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC6D20B01CF200CD2EA0 /* PostRestaurantViewController.swift */; };
+		0041CC8020B01CF500CD2EA0 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC6D20B01CF200CD2EA0 /* NewPostViewController.swift */; };
 		0041CC8120B01CF500CD2EA0 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC6E20B01CF200CD2EA0 /* Station.swift */; };
 		0041CC8320B01CF500CD2EA0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0041CC7020B01CF300CD2EA0 /* GoogleService-Info.plist */; };
 		0041CC8520B01CF500CD2EA0 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041CC7220B01CF300CD2EA0 /* RestaurantTableViewCell.swift */; };
@@ -35,11 +37,17 @@
 		00DF636E20B312CA003FB609 /* SearchItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DF636D20B312CA003FB609 /* SearchItemModel.swift */; };
 		00DF637520BF5E8B003FB609 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DF637420BF5E8B003FB609 /* LoginViewController.swift */; };
 		00F319A720CB8297004268D0 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319A620CB8297004268D0 /* AuthViewController.swift */; };
-		00F319A920CC9D26004268D0 /* SelectRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319A820CC9D26004268D0 /* SelectRestaurantViewController.swift */; };
+		00F319AB20CCD121004268D0 /* SelectRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319AA20CCD121004268D0 /* SelectRestaurantViewController.swift */; };
+		00F319AD20D4A07C004268D0 /* RequetNewRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319AC20D4A07C004268D0 /* RequetNewRestaurantViewController.swift */; };
+		00F319AF20D4B696004268D0 /* UserAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319AE20D4B696004268D0 /* UserAccountViewController.swift */; };
+		00F319B120D4C42C004268D0 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319B020D4C42C004268D0 /* PostCollectionViewCell.swift */; };
+		00F319B320D4DB6E004268D0 /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319B220D4DB6E004268D0 /* BorderedTextField.swift */; };
 		61DF87F250EAB3F14871F665 /* Pods_beerhunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C164FDE9422869FE79DE73 /* Pods_beerhunt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		001D159F20D5EF080087A1E5 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		001D15A120DDCF2E0087A1E5 /* UserPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostViewController.swift; sourceTree = "<group>"; };
 		001FD7B420C2C0F800557EFB /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		001FD7B620C36D1200557EFB /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		003D232B1F5EEF140042DF2F /* beerhunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = beerhunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,7 +65,7 @@
 		0041CC6A20B01CF100CD2EA0 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		0041CC6B20B01CF100CD2EA0 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		0041CC6C20B01CF100CD2EA0 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
-		0041CC6D20B01CF200CD2EA0 /* PostRestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostRestaurantViewController.swift; sourceTree = "<group>"; };
+		0041CC6D20B01CF200CD2EA0 /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		0041CC6E20B01CF200CD2EA0 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		0041CC6F20B01CF200CD2EA0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0041CC7020B01CF300CD2EA0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -72,7 +80,11 @@
 		00DF636F20B4D81A003FB609 /* beerhunt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = beerhunt.entitlements; sourceTree = "<group>"; };
 		00DF637420BF5E8B003FB609 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		00F319A620CB8297004268D0 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
-		00F319A820CC9D26004268D0 /* SelectRestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectR\U0001estaurantViewController.swift"; sourceTree = "<group>"; };
+		00F319AA20CCD121004268D0 /* SelectRestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRestaurantViewController.swift; sourceTree = "<group>"; };
+		00F319AC20D4A07C004268D0 /* RequetNewRestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequetNewRestaurantViewController.swift; sourceTree = "<group>"; };
+		00F319AE20D4B696004268D0 /* UserAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewController.swift; sourceTree = "<group>"; };
+		00F319B020D4C42C004268D0 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
+		00F319B220D4DB6E004268D0 /* BorderedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedTextField.swift; sourceTree = "<group>"; };
 		3A9FFB62FF909A141292213E /* Pods-beerhunt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beerhunt.release.xcconfig"; path = "Pods/Target Support Files/Pods-beerhunt/Pods-beerhunt.release.xcconfig"; sourceTree = "<group>"; };
 		9899DFB71798E05A9FA0703F /* Pods-beerhunt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beerhunt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beerhunt/Pods-beerhunt.debug.xcconfig"; sourceTree = "<group>"; };
 		A7C164FDE9422869FE79DE73 /* Pods_beerhunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beerhunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				0041CC6C20B01CF100CD2EA0 /* Restaurant.swift */,
+				001D159F20D5EF080087A1E5 /* Post.swift */,
 				0041CC6E20B01CF200CD2EA0 /* Station.swift */,
 				00DF636120B06D63003FB609 /* Model.swift */,
 				0041CC5B20B01CE000CD2EA0 /* SearchableItem.swift */,
@@ -143,18 +156,21 @@
 		00DF635620B022D2003FB609 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				00F319A820CC9D26004268D0 /* SelectRestaurantViewController.swift */,
 				0041CC6820B01CF000CD2EA0 /* FavoritesViewController.swift */,
+				00F319AA20CCD121004268D0 /* SelectRestaurantViewController.swift */,
 				00DF636520B0E652003FB609 /* CustomTabBarController.swift */,
-				0041CC6D20B01CF200CD2EA0 /* PostRestaurantViewController.swift */,
+				0041CC6D20B01CF200CD2EA0 /* NewPostViewController.swift */,
 				0041CC5820B01CDF00CD2EA0 /* HomeViewController.swift */,
 				0041CC5920B01CDF00CD2EA0 /* RequestFormViewController.swift */,
+				00F319AC20D4A07C004268D0 /* RequetNewRestaurantViewController.swift */,
 				0041CC5620B01CDE00CD2EA0 /* RestaurantViewController.swift */,
 				0041CC5A20B01CDF00CD2EA0 /* ResultViewController.swift */,
 				00DF637420BF5E8B003FB609 /* LoginViewController.swift */,
 				00F319A620CB8297004268D0 /* AuthViewController.swift */,
 				001FD7B420C2C0F800557EFB /* SignupViewController.swift */,
 				001FD7B620C36D1200557EFB /* ForgetPasswordViewController.swift */,
+				00F319AE20D4B696004268D0 /* UserAccountViewController.swift */,
+				001D15A120DDCF2E0087A1E5 /* UserPostViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -175,6 +191,8 @@
 				0041CC7220B01CF300CD2EA0 /* RestaurantTableViewCell.swift */,
 				00DF636B20B30DC2003FB609 /* SearchPushRow.swift */,
 				0041CC6A20B01CF100CD2EA0 /* RoundedButton.swift */,
+				00F319B020D4C42C004268D0 /* PostCollectionViewCell.swift */,
+				00F319B220D4DB6E004268D0 /* BorderedTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -304,6 +322,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
@@ -319,6 +338,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
@@ -382,18 +402,24 @@
 				0041CC7720B01CF500CD2EA0 /* PlacesClient.swift in Sources */,
 				0041CC6220B01CE000CD2EA0 /* SearchableItem.swift in Sources */,
 				0041CC8120B01CF500CD2EA0 /* Station.swift in Sources */,
+				00F319AF20D4B696004268D0 /* UserAccountViewController.swift in Sources */,
 				0041CC7A20B01CF500CD2EA0 /* Constants.swift in Sources */,
 				00DF636220B06D63003FB609 /* Model.swift in Sources */,
 				00DF637520BF5E8B003FB609 /* LoginViewController.swift in Sources */,
 				00DF636620B0E652003FB609 /* CustomTabBarController.swift in Sources */,
 				0041CC5F20B01CE000CD2EA0 /* HomeViewController.swift in Sources */,
 				0041CC8520B01CF500CD2EA0 /* RestaurantTableViewCell.swift in Sources */,
+				00F319B120D4C42C004268D0 /* PostCollectionViewCell.swift in Sources */,
+				00F319AD20D4A07C004268D0 /* RequetNewRestaurantViewController.swift in Sources */,
+				00F319B320D4DB6E004268D0 /* BorderedTextField.swift in Sources */,
 				00F319A720CB8297004268D0 /* AuthViewController.swift in Sources */,
 				0041CC7B20B01CF500CD2EA0 /* FavoritesViewController.swift in Sources */,
-				0041CC8020B01CF500CD2EA0 /* PostRestaurantViewController.swift in Sources */,
+				00F319AB20CCD121004268D0 /* SelectRestaurantViewController.swift in Sources */,
+				0041CC8020B01CF500CD2EA0 /* NewPostViewController.swift in Sources */,
 				00DF636C20B30DC2003FB609 /* SearchPushRow.swift in Sources */,
+				001D15A020D5EF080087A1E5 /* Post.swift in Sources */,
+				001D15A220DDCF2E0087A1E5 /* UserPostViewController.swift in Sources */,
 				001FD7B520C2C0F800557EFB /* SignupViewController.swift in Sources */,
-				00F319A920CC9D26004268D0 /* SelectRestaurantViewController.swift in Sources */,
 				0041CC7E20B01CF500CD2EA0 /* InfoTableViewCell.swift in Sources */,
 				0041CC7D20B01CF500CD2EA0 /* RoundedButton.swift in Sources */,
 				0041CC7620B01CF500CD2EA0 /* AppDelegate.swift in Sources */,

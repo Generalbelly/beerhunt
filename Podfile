@@ -20,4 +20,5 @@ target 'beerhunt' do
     pod 'SearchTextField'
     pod 'SwiftValidator', :git => 'https://github.com/jpotts18/SwiftValidator.git', :branch => 'master'
     pod 'SVProgressHUD'
+    pod 'Kingfisher'
 end

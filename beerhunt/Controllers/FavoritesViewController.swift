@@ -127,10 +127,6 @@ extension FavoritesViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegat
         return NSAttributedString(string: string, attributes: attributes)
     }
 
-    func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
-        return -(self.navigationController!.navigationBar.frame.size.height) / 2.0
-    }
-
 }
 
 extension FavoritesViewController: RestaurantViewDelegate {

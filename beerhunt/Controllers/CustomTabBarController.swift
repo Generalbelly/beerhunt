@@ -35,7 +35,7 @@ class CustomTabBarController: UITabBarController {
             picker.didSelectImage = { image in
                 guard
                     let picker = self.picker,
-                    let prvc = self.storyboard?.instantiateViewController(withIdentifier: "postRestaurantViewController") as? PostRestaurantViewController
+                    let prvc = self.storyboard?.instantiateViewController(withIdentifier: "newPostViewController") as? NewPostViewController
                 else { assert(false) }
                 prvc.image = image
                 picker.pushViewController(prvc, animated: true)

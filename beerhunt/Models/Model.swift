@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import FirebaseDatabase
+import Firebase
 
 class Model {
     var key: String?
@@ -26,4 +26,5 @@ class Model {
         data["updated_at"] = ServerValue.timestamp()
         ref.updateChildValues(data)
     }
+
 }

@@ -43,6 +43,7 @@ PODS:
   - ImageSlideshow (1.5.3):
     - ImageSlideshow/Core (= 1.5.3)
   - ImageSlideshow/Core (1.5.3)
+  - Kingfisher (4.7.0)
   - leveldb-library (1.20)
   - LicensePlist (1.8.3)
   - nanopb (0.3.8):
@@ -67,6 +68,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - GooglePlaces
   - ImageSlideshow
+  - Kingfisher
   - LicensePlist
   - SearchTextField
   - SVProgressHUD
@@ -99,6 +101,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   ImageSlideshow: 24a1184909f589379ba2527ebcc77996881bb1f2
+  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   LicensePlist: 3fda61ebe060afc8fc6d995df34a91401af5a244
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
@@ -109,6 +112,6 @@ SPEC CHECKSUMS:
   SwiftValidator: 25ded5ca1f10c05adf57f6ac82a72d28ac8d91af
   YPImagePicker: 7b44e0ca5e969a18e83cd3b54cec2e0cb287a40e
 
-PODFILE CHECKSUM: e7654daa7268243c4c6deb01bd89c2c290a6dabc
+PODFILE CHECKSUM: e5dbbec0c090a08f4332536f6672562b2afacfb5
 
 COCOAPODS: 1.4.0

@@ -8,7 +8,8 @@
 
 import UIKit
 
-@IBDesignable class RoundedButton: UIButton {
+@IBDesignable
+class RoundedButton: UIButton {
 
     @IBInspectable var cornerRadius: CGFloat = 0.0
     @IBInspectable var borderWidth: CGFloat = 0.0

@@ -94,7 +94,7 @@ open class _SearchPushRow<Cell: CellType> : SelectorRow<Cell> where Cell: BaseCe
     public required init(tag: String?) {
         super.init(tag: tag)
         presentationMode = .show(controllerProvider: ControllerProvider.callback { return SearchSelectorViewController<SelectorRow<Cell>> { _ in } }, onDismiss: { vc in
-//            _ = vc.navigationController?.popViewController(animated: true)
+            _ = vc.navigationController?.popViewController(animated: true)
         })
     }
 }

@@ -7,7 +7,7 @@
 //
 
 import GooglePlaces
-import FirebaseDatabase
+import Firebase
 
 class Restaurant: Model {
     var name: String! {
@@ -57,9 +57,4 @@ class Restaurant: Model {
         self.placeId = data["place_id"] as? String
     }
 
-    init(name: String, key: String?) {
-        super.init(snapshot: nil)
-        self.name = name
-        self.key = key
-    }
 }

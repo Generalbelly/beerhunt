@@ -66,7 +66,7 @@ class RequestFormViewController: FormViewController {
         if self.alertController == nil {
             self.alertController = UIAlertController(title: "ありがとうございます！", message: "アプリ改善に役立たせていただきます。", preferredStyle: .alert)
             let OKAction = UIAlertAction(title: "閉じる", style: .default) { [unowned self] _ in
-                self.dismiss(animated: true, completion: { [unowned self] in
+                self.alertController!.dismiss(animated: true, completion: { [unowned self] in
                     self.alertController = nil
                 })
                 if let row = self.form.rowBy(tag: "message") as? TextAreaRow {

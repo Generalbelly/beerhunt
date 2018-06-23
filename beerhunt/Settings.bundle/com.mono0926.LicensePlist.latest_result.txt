@@ -60,6 +60,10 @@ name: ImageSlideshow, nameSpecified:
 body: Copyright (c) 2015 P…
 version: 1.5.3
 
+name: Kingfisher, nameSpecified: 
+body: The MIT License (MIT…
+version: 4.7.0
+
 name: leveldb-library, nameSpecified: 
 body: Copyright (c) 2011 T…
 version: 1.20

@@ -24,7 +24,7 @@
                         <segue destination="iJq-aZ-uBD" kind="relationship" relationship="viewControllers" id="5Gg-4r-VLM"/>
                         <segue destination="6lf-x5-DBn" kind="relationship" relationship="viewControllers" id="X56-4A-PRI"/>
                         <segue destination="CZE-iR-ie2" kind="relationship" relationship="viewControllers" id="U1V-T3-ZUh"/>
-                        <segue destination="WHu-TB-Ny1" kind="relationship" relationship="viewControllers" id="F8c-Tg-YKQ"/>
+                        <segue destination="Ozo-of-YgB" kind="relationship" relationship="viewControllers" id="F8c-Tg-YKQ"/>
                         <segue destination="a6q-2y-Qa8" kind="presentation" identifier="login" id="Pmw-7s-oeJ"/>
                     </connections>
                 </tabBarController>
@@ -110,7 +110,13 @@
                             <constraint firstItem="8os-7f-sYt" firstAttribute="width" secondItem="LQ0-ER-4sU" secondAttribute="width" multiplier="9:10" id="u43-fd-6OB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Jxl-yA-kSv"/>
+                    <navigationItem key="navigationItem" id="Jxl-yA-kSv">
+                        <barButtonItem key="rightBarButtonItem" title="お店の追加リクエスト" id="UHr-qm-z8A">
+                            <connections>
+                                <segue destination="GBR-g9-kgN" kind="show" id="Guq-tx-X5L"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchTextField" destination="FEr-j6-2Mm" id="DGI-y5-bYQ"/>
                     </connections>
@@ -223,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RCJ-h6-w1M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2127" y="-600"/>
+            <point key="canvasLocation" x="2103" y="-600"/>
         </scene>
         <!--Restaurant View Controller-->
         <scene sceneID="K9d-6l-bsR">
@@ -449,10 +455,10 @@
             </objects>
             <point key="canvasLocation" x="1380" y="83"/>
         </scene>
-        <!--Request Form View Controller-->
+        <!--User Account View Controller-->
         <scene sceneID="RWf-Im-V8N">
             <objects>
-                <viewController id="WHu-TB-Ny1" customClass="RequestFormViewController" customModule="beerhunt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WHu-TB-Ny1" customClass="UserAccountViewController" customModule="beerhunt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ti3-S2-GXh"/>
                         <viewControllerLayoutGuide type="bottom" id="WRh-K7-JOa"/>
@@ -460,15 +466,95 @@
                     <view key="view" contentMode="scaleToFill" id="NzY-Kd-dHZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ngk-9c-VXX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="tn6-N3-kxM">
+                                    <size key="itemSize" width="179" height="167"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="post" id="0IO-xD-RG5" customClass="PostCollectionViewCell" customModule="beerhunt" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="179" height="167"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="179" height="167"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aGg-eQ-ZgE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="179" height="167"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="aGg-eQ-ZgE" firstAttribute="top" secondItem="0IO-xD-RG5" secondAttribute="top" id="4Mh-GM-11a"/>
+                                            <constraint firstItem="aGg-eQ-ZgE" firstAttribute="height" secondItem="0IO-xD-RG5" secondAttribute="height" id="NwP-KF-a2z"/>
+                                            <constraint firstItem="aGg-eQ-ZgE" firstAttribute="width" secondItem="0IO-xD-RG5" secondAttribute="width" id="hro-xY-T6B"/>
+                                            <constraint firstItem="aGg-eQ-ZgE" firstAttribute="leading" secondItem="0IO-xD-RG5" secondAttribute="leading" id="qRg-oc-wkn"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="aGg-eQ-ZgE" id="pDY-Ea-Yor"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ngk-9c-VXX" firstAttribute="top" secondItem="Ti3-S2-GXh" secondAttribute="bottom" id="Ray-5S-e97"/>
+                            <constraint firstAttribute="trailing" secondItem="ngk-9c-VXX" secondAttribute="trailing" id="V71-Lw-ckK"/>
+                            <constraint firstItem="ngk-9c-VXX" firstAttribute="bottom" secondItem="WRh-K7-JOa" secondAttribute="top" id="Yer-ks-CdW"/>
+                            <constraint firstItem="ngk-9c-VXX" firstAttribute="leading" secondItem="NzY-Kd-dHZ" secondAttribute="leading" id="ivP-Ak-Jqh"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" image="More" id="Ywt-SC-vk8">
-                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="aoO-qD-3Yt"/>
+                    <connections>
+                        <outlet property="collectionView" destination="ngk-9c-VXX" id="6th-0d-iKZ"/>
+                        <segue destination="p4x-TA-4sb" kind="show" identifier="userPost" id="eIo-dK-Wzj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTn-zB-rJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1380" y="968"/>
+            <point key="canvasLocation" x="2695.1999999999998" y="865.81709145427294"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wwC-qY-X21">
+            <objects>
+                <viewController id="p4x-TA-4sb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Ka-By-ECl"/>
+                        <viewControllerLayoutGuide type="bottom" id="PMM-Z1-f2B"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kgr-ug-OTh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wvH-rG-FY5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3508" y="866"/>
+        </scene>
+        <!--Requet New Restaurant View Controller-->
+        <scene sceneID="CIQ-Ne-58u">
+            <objects>
+                <viewController id="GBR-g9-kgN" customClass="RequetNewRestaurantViewController" customModule="beerhunt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A31-L5-pi2"/>
+                        <viewControllerLayoutGuide type="bottom" id="TSf-aE-VfY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zfw-eB-llV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uIE-M9-KgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2497" y="-1267"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BrC-G0-VdI">
@@ -530,10 +616,10 @@
             </objects>
             <point key="canvasLocation" x="-314.39999999999998" y="757.87106446776613"/>
         </scene>
-        <!--Post Restaurant View Controller-->
+        <!--New Post View Controller-->
         <scene sceneID="Txv-Nc-ezF">
             <objects>
-                <viewController storyboardIdentifier="postRestaurantViewController" id="Gqi-XQ-mAc" customClass="PostRestaurantViewController" customModule="beerhunt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newPostViewController" id="Gqi-XQ-mAc" customClass="NewPostViewController" customModule="beerhunt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x4N-u4-fwo"/>
                         <viewControllerLayoutGuide type="bottom" id="epU-yn-tPi"/>
@@ -541,41 +627,10 @@
                     <view key="view" contentMode="scaleToFill" id="EWV-cG-liS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cwq-43-nQt">
-                                <rect key="frame" x="0.0" y="28" width="375" height="639"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zPl-zj-sO7">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="319.5"/>
-                                    </imageView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3i6-gh-80x">
-                                        <rect key="frame" x="0.0" y="319.5" width="375" height="319.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="field" id="4kP-z8-zMi">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4kP-z8-zMi" id="dch-4A-gJY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                        </prototypes>
-                                    </tableView>
-                                </subviews>
-                            </stackView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="cwq-43-nQt" firstAttribute="leading" secondItem="EWV-cG-liS" secondAttribute="leading" id="DeV-VT-XAX"/>
-                            <constraint firstItem="epU-yn-tPi" firstAttribute="top" secondItem="cwq-43-nQt" secondAttribute="bottom" id="Jo0-bc-W78"/>
-                            <constraint firstAttribute="trailing" secondItem="cwq-43-nQt" secondAttribute="trailing" id="Qe4-CY-M1J"/>
-                            <constraint firstItem="cwq-43-nQt" firstAttribute="top" secondItem="x4N-u4-fwo" secondAttribute="bottom" constant="8" symbolic="YES" id="btK-0p-gty"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="zPl-zj-sO7" id="3yY-DA-qyc"/>
-                        <outlet property="tableView" destination="3i6-gh-80x" id="OPZ-HJ-zHd"/>
+                        <segue destination="rzv-JK-K0U" kind="show" identifier="selectRestaurant" id="PLf-r4-f79"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xsH-oX-icv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -585,7 +640,7 @@
         <!--Select Restaurant View Controller-->
         <scene sceneID="k0L-DQ-OaG">
             <objects>
-                <viewController storyboardIdentifier="addNewRestaurantViewController" id="rzv-JK-K0U" customClass="SelectRestaurantViewController" customModule="beerhunt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rzv-JK-K0U" customClass="SelectRestaurantViewController" customModule="beerhunt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DBq-Em-YC7"/>
                         <viewControllerLayoutGuide type="bottom" id="QOt-XW-FiY"/>
@@ -598,12 +653,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="restaurant" id="h0A-hH-KM1">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="restaurant" textLabel="Eda-A0-kjN" style="IBUITableViewCellStyleDefault" id="h0A-hH-KM1">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h0A-hH-KM1" id="Mgp-nH-m8e">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Eda-A0-kjN">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -618,7 +682,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="6hP-th-D7j" id="cKf-2W-yqO"/>
+                        <outlet property="tableView" destination="6hP-th-D7j" id="JwO-yq-6P2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yjm-tJ-j4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -658,14 +722,26 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aVQ-dn-kl1">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="193.5"/>
                                                 <subviews>
-                                                    <textField opaque="NO" alpha="0.25" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mp7-8G-sQa">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mp7-8G-sQa" customClass="BorderedTextField" customModule="beerhunt" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="dqP-PB-0A0"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" textContentType="email"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSj-dl-aTM">
                                                         <rect key="frame" x="0.0" y="44" width="343" height="20.5"/>
@@ -673,14 +749,26 @@
                                                         <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ut-tH-64v">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ut-tH-64v" customClass="BorderedTextField" customModule="beerhunt" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="64.5" width="343" height="44"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="pIu-u4-1Cz"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPh-eu-iEo">
                                                         <rect key="frame" x="0.0" y="108.5" width="343" height="20.5"/>
@@ -814,14 +902,26 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XLF-jU-WQI">
                                         <rect key="frame" x="0.0" y="54" width="343" height="322.5"/>
                                         <subviews>
-                                            <textField opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="76w-pu-JTe">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="76w-pu-JTe" customClass="BorderedTextField" customModule="beerhunt" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="51q-qI-tmU"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" textContentType="email"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVV-fu-RM8">
                                                 <rect key="frame" x="0.0" y="44" width="343" height="20.5"/>
@@ -829,14 +929,26 @@
                                                 <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FBm-KS-GGW">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FBm-KS-GGW" customClass="BorderedTextField" customModule="beerhunt" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="64.5" width="343" height="44"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="eNv-nW-Of6"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6AN-RM-qFe">
                                                 <rect key="frame" x="0.0" y="108.5" width="343" height="20.5"/>
@@ -844,14 +956,26 @@
                                                 <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード（確認用）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s0v-Ra-45G">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード（確認用）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s0v-Ra-45G" customClass="BorderedTextField" customModule="beerhunt" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="129" width="343" height="44"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="LCi-fg-PgL"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Io-U7-edq">
                                                 <rect key="frame" x="0.0" y="173" width="343" height="20.5"/>
@@ -859,14 +983,26 @@
                                                 <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ユーザー名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ydl-LC-k9r">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ユーザー名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ydl-LC-k9r" customClass="BorderedTextField" customModule="beerhunt" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="193.5" width="343" height="44"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="tSt-Rt-0OW"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" textContentType="username"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Yu-RD-gwg">
                                                 <rect key="frame" x="0.0" y="237.5" width="343" height="20.5"/>
@@ -945,14 +1081,26 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QhB-Gu-rU0">
                                 <rect key="frame" x="16" y="94" width="343" height="129"/>
                                 <subviews>
-                                    <textField opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="00P-IN-m8b">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="00P-IN-m8b" customClass="BorderedTextField" customModule="beerhunt" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="j7V-Wv-qnM"/>
                                         </constraints>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUq-Kp-Lsa">
                                         <rect key="frame" x="0.0" y="44" width="343" height="20.5"/>
@@ -1005,12 +1153,33 @@
             </objects>
             <point key="canvasLocation" x="3068" y="1669"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xiL-Wr-wMz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ozo-of-YgB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" image="Person" id="Ywt-SC-vk8">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k24-ol-3xc">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WHu-TB-Ny1" kind="relationship" relationship="rootViewController" id="Ejh-wG-yK6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZFL-s4-0Ii" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1756" y="865.81709145427294"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Camera" width="25" height="25"/>
         <image name="Favorite" width="25" height="25"/>
         <image name="Minibear" width="40" height="40"/>
-        <image name="More" width="25" height="25"/>
+        <image name="Person" width="25" height="25"/>
         <image name="Search" width="25" height="25"/>
     </resources>
 </document>
